@@ -1,0 +1,45 @@
+{
+  "common": {
+    "home": "Anasayfa",
+    "search": "Ara",
+    "login": "Giriş Yap",
+    "breaking_news": "SON DAKİKA",
+    "currency": "PİYASALAR",
+    "read_more": "Devamını Oku",
+    "all_news": "Tümünü Gör",
+    "videos": "Videolar",
+    "news": "Haberleri",
+    "footer_desc": "Doğru, tarafsız ve güncel haberin adresi.",
+    "copyright": "© 2024 Primedia. Tüm hakları saklıdır."
+  },
+  "nav": {
+    "agenda": "Gündem",
+    "world": "Dünya",
+    "economy": "Ekonomi",
+    "finance": "Finans",
+    "stock": "Borsa",
+    "sports": "Spor",
+    "technology": "Teknoloji",
+    "magazine": "Magazin",
+    "health": "Sağlık",
+    "culture": "Kültür Sanat"
+  },
+  "home": {
+    "tech_future": "Teknoloji & Gelecek",
+    "sports_agenda": "SPOR GÜNDEMİ",
+    "magazine_life": "MAGAZİN & YAŞAM",
+    "todays_videos": "Günün Videoları",
+    "video_subtitle": "Türkiye ve dünyadan en çarpıcı görüntüler",
+    "ad_space": "Reklam Alanı",
+    "authors": "Köşe Yazarları",
+    "all_authors": "Tüm Yazarlar"
+  },
+  "footer": {
+    "categories": "Kategoriler",
+    "corporate": "Kurumsal",
+    "follow_us": "Bizi Takip Edin",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası"
+  }
+}

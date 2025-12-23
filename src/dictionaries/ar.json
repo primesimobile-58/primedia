@@ -1,0 +1,45 @@
+{
+  "common": {
+    "home": "الرئيسية",
+    "search": "بحث",
+    "login": "تسجيل الدخول",
+    "breaking_news": "عاجل",
+    "currency": "الأسواق",
+    "read_more": "اقرأ المزيد",
+    "all_news": "مشاهدة الكل",
+    "videos": "فيديو",
+    "news": "أخبار",
+    "footer_desc": "عنوان الأخبار الدقيقة والمحايدة والحديثة.",
+    "copyright": "© 2024 Primedia. جميع الحقوق محفوظة."
+  },
+  "nav": {
+    "agenda": "جدول الأعمال",
+    "world": "العالم",
+    "economy": "اقتصاد",
+    "finance": "تمويل",
+    "stock": "بورصة",
+    "sports": "رياضة",
+    "technology": "تكنولوجيا",
+    "magazine": "مجلة",
+    "health": "صحة",
+    "culture": "ثقافة وفن"
+  },
+  "home": {
+    "tech_future": "التكنولوجيا والمستقبل",
+    "sports_agenda": "الأجندة الرياضية",
+    "magazine_life": "المجلة والحياة",
+    "todays_videos": "فيديوهات اليوم",
+    "video_subtitle": "أبرز اللقطات من تركيا والعالم",
+    "ad_space": "مساحة إعلانية",
+    "authors": "كتاب الأعمدة",
+    "all_authors": "جميع الكتاب"
+  },
+  "footer": {
+    "categories": "فئات",
+    "corporate": "شركات",
+    "follow_us": "تابعنا",
+    "about": "معلومات عنا",
+    "contact": "اتصال",
+    "privacy": "سياسة الخصوصية"
+  }
+}

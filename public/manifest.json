@@ -1,0 +1,16 @@
+{
+  "name": "Primedia Haber Portalı",
+  "short_name": "Primedia",
+  "description": "Güncel haberler, son dakika gelişmeleri, ekonomi ve teknoloji haberleri",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

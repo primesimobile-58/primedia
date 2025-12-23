@@ -1,0 +1,45 @@
+{
+  "common": {
+    "home": "Home",
+    "search": "Search",
+    "login": "Login",
+    "breaking_news": "BREAKING",
+    "currency": "MARKETS",
+    "read_more": "Read More",
+    "all_news": "See All",
+    "videos": "Videos",
+    "news": "News",
+    "footer_desc": "The address of accurate, impartial and up-to-date news.",
+    "copyright": "© 2024 Primedia. All rights reserved."
+  },
+  "nav": {
+    "agenda": "Agenda",
+    "world": "World",
+    "economy": "Economy",
+    "finance": "Finance",
+    "stock": "Stocks",
+    "sports": "Sports",
+    "technology": "Technology",
+    "magazine": "Magazine",
+    "health": "Health",
+    "culture": "Culture & Art"
+  },
+  "home": {
+    "tech_future": "Technology & Future",
+    "sports_agenda": "SPORTS AGENDA",
+    "magazine_life": "MAGAZINE & LIFE",
+    "todays_videos": "Today's Videos",
+    "video_subtitle": "Most striking footages from Turkey and the world",
+    "ad_space": "Ad Space",
+    "authors": "Columnists",
+    "all_authors": "All Columnists"
+  },
+  "footer": {
+    "categories": "Categories",
+    "corporate": "Corporate",
+    "follow_us": "Follow Us",
+    "about": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy"
+  }
+}
