@@ -1,5 +1,5 @@
 import Parser from 'rss-parser';
-import { NewsItem } from './data';
+import { NewsItem, mockNews } from './data';
 
 const parser = new Parser({
   customFields: {
@@ -84,11 +84,44 @@ const FALLBACK_IMAGES = {
   ],
 };
 
-const getFallbackImage = (category: string, id: string) => {
-  // Use a hash of the ID to pick a deterministic image from the array
-  const hash = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const getFallbackImage = (category: string, id: string, title?: string) => {
+  // 1. Try to match keywords in title if available
+  if (title) {
+    const lowerTitle = title.toLowerCase();
+    
+    // Economy Keywords
+    if (['dolar', 'euro', 'altın', 'borsa', 'faiz', 'enflasyon', 'ekonomi', 'banka', 'hisse', 'market', 'currency', 'gold', 'stock'].some(k => lowerTitle.includes(k))) {
+      const images = FALLBACK_IMAGES.economy;
+      return images[Math.abs(hashString(id)) % images.length];
+    }
+    
+    // Sports Keywords
+    if (['fenerbahçe', 'galatasaray', 'beşiktaş', 'trabzonspor', 'futbol', 'maç', 'lig', 'voleybol', 'basketbol', 'gol', 'transfer', 'sport', 'football', 'soccer'].some(k => lowerTitle.includes(k))) {
+      const images = FALLBACK_IMAGES.sports;
+      return images[Math.abs(hashString(id)) % images.length];
+    }
+
+    // Technology Keywords
+    if (['apple', 'samsung', 'yapay zeka', 'ai', 'internet', 'teknoloji', 'telefon', 'bilgisayar', 'yazılım', 'kod', 'robot', 'uzay', 'nasa', 'tech', 'mobile'].some(k => lowerTitle.includes(k))) {
+      const images = FALLBACK_IMAGES.technology;
+      return images[Math.abs(hashString(id)) % images.length];
+    }
+    
+    // World/Politics Keywords
+    if (['abd', 'rusya', 'ukrayna', 'israil', 'gazze', 'trump', 'biden', 'putin', 'savaş', 'kriz', 'bm', 'nato', 'world', 'war'].some(k => lowerTitle.includes(k))) {
+      const images = FALLBACK_IMAGES.world;
+      return images[Math.abs(hashString(id)) % images.length];
+    }
+  }
+
+  // 2. Fallback to category based
+  const hash = hashString(id);
   const images = FALLBACK_IMAGES[category as keyof typeof FALLBACK_IMAGES] || FALLBACK_IMAGES.general;
-  return images[hash % images.length];
+  return images[Math.abs(hash) % images.length];
+};
+
+const hashString = (str: string) => {
+  return str.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
 };
 
 function extractImage(item: any): string {
@@ -106,6 +139,28 @@ function extractImage(item: any): string {
     return imgMatch[1];
   }
   return '';
+}
+
+export async function getAllNews(lang: string): Promise<NewsItem[]> {
+  const categories = Object.keys(RSS_SOURCES[lang] || RSS_SOURCES['tr']);
+  const promises = categories.map(cat => fetchNews(lang, cat));
+  const results = await Promise.all(promises);
+  return results.flat();
+}
+
+export async function getNewsById(id: string, lang: string): Promise<NewsItem | undefined> {
+  // 0. Check mockNews first (for static content)
+  const mockFound = mockNews.find(n => n.id === id);
+  if (mockFound) return mockFound;
+
+  // 1. Try fetching just the general/breaking first as it's most likely there
+  let news = await fetchNews(lang, 'general');
+  let found = news.find(n => n.id === id);
+  if (found) return found;
+
+  // 2. If not found, fetch everything (heavy but necessary without DB)
+  const allNews = await getAllNews(lang);
+  return allNews.find(n => n.id === id);
 }
 
 export async function fetchNews(lang: string, category: string = 'general'): Promise<NewsItem[]> {
@@ -142,7 +197,7 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     return feed.items.map((item, index) => {
       const id = item.guid || item.link || index.toString();
       const extractedImage = extractImage(item);
-      const imageUrl = extractedImage || getFallbackImage(sourceKey, id);
+      const imageUrl = extractedImage || getFallbackImage(sourceKey, id, item.title);
       
       // Clean up description (remove HTML tags if necessary, but some components render HTML)
       // For this project, we'll strip HTML for the summary to be safe

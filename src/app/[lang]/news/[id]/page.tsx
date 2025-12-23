@@ -7,6 +7,7 @@ import { Locale } from '@/i18n-config';
 import NewsCard from '@/components/NewsCard';
 import Footer from '@/components/Footer';
 import { getDictionary } from '@/lib/get-dictionary';
+import { getNewsById } from '@/lib/rss';
 
 interface PageProps {
   params: {
@@ -29,15 +30,22 @@ export function generateStaticParams() {
 export default async function NewsDetail({ params }: PageProps) {
   const { id, lang } = params;
   const dict = await getDictionary(lang);
-  const news = mockNews.find((n) => n.id === id);
+  
+  // Fetch news from RSS or mock data
+  const news = await getNewsById(id, lang);
 
   if (!news) {
     notFound();
   }
 
   // Benzer Haberler (Aynı kategoriden, kendisi hariç)
+  // For related news, we can filter mockNews or just show some random ones if we can't fetch more
+  // Since we don't have easy access to "all news" here without re-fetching, 
+  // we will use mockNews for "Related" to ensure fast render, or we could fetch category again.
+  // Let's stick to mockNews for related for now to avoid double fetch latency, 
+  // OR better: since we don't have the category feed handy, just show mockNews as "Suggested".
   const relatedNews = mockNews
-    .filter((n) => n.category === news.category && n.id !== news.id)
+    .filter((n) => n.id !== news.id) // Just exclude current
     .slice(0, 3);
 
   return (

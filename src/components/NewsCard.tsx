@@ -11,7 +11,7 @@ interface NewsCardProps {
 
 export default function NewsCard({ news, featured = false, readMoreText = 'Devamını Oku' }: NewsCardProps) {
   return (
-    <Link href={`/news/${news.id}`} className="group block h-full">
+    <Link href={`/news/${encodeURIComponent(news.id)}`} className="group block h-full">
       <div className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-100 bg-white h-full flex flex-col ${featured ? 'md:flex-row md:items-stretch' : ''}`}>
         
         {/* Resim Alanı */}
