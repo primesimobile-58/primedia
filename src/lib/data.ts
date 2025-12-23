@@ -22,15 +22,16 @@ export const categories: Category[] = [
 export interface NewsItem {
   id: string;
   title: string;
+  summary: string;
   category: string;
   imageUrl: string;
-  summary: string;
-  content?: string; // Detay sayfası için
   date: string;
   time: string;
+  viewCount?: number;
   isHeadline?: boolean;
   isBreaking?: boolean;
-  viewCount?: number;
+  content?: string; // HTML content from RSS
+  link?: string;    // Original link
 }
 
 export const mockNews: NewsItem[] = [

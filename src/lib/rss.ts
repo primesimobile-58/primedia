@@ -20,14 +20,14 @@ type RSSSource = {
 
 const RSS_SOURCES: RSSSource = {
   tr: {
-    general: 'https://www.cnnturk.com/feed/rss/all/news',
-    world: 'https://www.cnnturk.com/feed/rss/dunya/news',
-    technology: 'https://www.donanimhaber.com/rss/tum/',
-    sports: 'https://www.fotomac.com.tr/rss/anasayfa.xml',
-    magazine: 'https://www.cnnturk.com/feed/rss/magazin/news',
-    economy: 'https://www.cnnturk.com/feed/rss/ekonomi/news',
+    general: 'https://www.mynet.com/haber/rss/sondakika', // Mynet - Kullanıcı isteği üzerine gündem referansı
+    world: 'https://feeds.bbci.co.uk/turkce/rss.xml', // BBC Türkçe - Global kalite
+    technology: 'https://www.donanimhaber.com/rss/tum/', 
+    sports: 'https://www.ntvspor.net/rss', 
+    magazine: 'https://www.magazinkolik.com/rss.php', 
+    economy: 'https://www.bloomberght.com/rss',
     health: 'https://www.cnnturk.com/feed/rss/saglik/news',
-    culture: 'https://www.cnnturk.com/feed/rss/kultur-sanat/news',
+    culture: 'https://www.ntv.com.tr/sanat.rss',
   },
   en: {
     general: 'http://feeds.bbci.co.uk/news/rss.xml',
@@ -39,15 +39,30 @@ const RSS_SOURCES: RSSSource = {
     culture: 'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml',
   },
   ar: {
-    general: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e', // Top News
+    general: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e', 
     world: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
-    technology: 'https://www.aljazeera.net/aljazeerarss/c4e88383-a795-40b9-b5c4-7d5264b38343', // Sci-Tech
+    technology: 'https://www.aljazeera.net/aljazeerarss/c4e88383-a795-40b9-b5c4-7d5264b38343',
     sports: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
     economy: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
     health: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
     culture: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
   }
 };
+
+// Spam ve gereksiz haber filtresi (Asliye Ceza, İlan vb.)
+const BLOCKED_KEYWORDS = [
+  'asliye ceza', 'asliye ticaret', 'icra dairesi', 'satış memurluğu', 'ilan.gov.tr', 
+  'ihale', 'vefat', 'başsağlığı', 'elektrik kesintisi', 'su kesintisi', 
+  'nöbetçi eczane', 'hava durumu', 'namaz vakitleri',
+  'müge anlı', 'esra erol', 'gelinim mutfakta', 'survivor kim elendi', // Reality show spam'i
+  'banko kupon', 'iddaa tahmin', 'yasa dışı bahis', // Bahis spam'i
+  'cinsel gücü', 'mucize karışım', 'göbek eriten' // Sağlık spam'i
+];
+
+function isSpamNews(title: string, summary: string): boolean {
+  const text = (title + ' ' + summary).toLowerCase();
+  return BLOCKED_KEYWORDS.some(keyword => text.includes(keyword));
+}
 
 // Fallback images (High quality, static URLs to avoid broken links)
 const FALLBACK_IMAGES = {
@@ -204,18 +219,25 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
       const summary = ((item as any).description || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 150) + '...';
       const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
 
+      // Check for spam/boring content
+      if (isSpamNews(item.title || '', summary)) {
+        return null;
+      }
+
       return {
         id: id, 
         title: item.title || 'Haber Başlığı',
         summary: summary,
-        category: category.charAt(0).toUpperCase() + category.slice(1), // Capitalize
+        content: (item as any)['content:encoded'] || (item as any).content || (item as any).description || '', // Full content if available
+        link: item.link, // Store original link
+        category: category.charAt(0).toUpperCase() + category.slice(1), 
         imageUrl: imageUrl,
         date: pubDate.toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
         time: pubDate.toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' }),
-        isHeadline: index < 5, // First 5 items are headlines
-        isBreaking: index < 3, // First 3 items are breaking
+        isHeadline: index < 5, 
+        isBreaking: index < 3, 
       };
-    });
+    }).filter(item => item !== null) as NewsItem[];
   } catch (error) {
     console.error(`Error fetching RSS for ${lang}/${category}:`, error);
     return [];

@@ -101,24 +101,30 @@ export default async function NewsDetail({ params }: PageProps) {
               {news.summary}
             </p>
 
-            {/* İçerik (Simülasyon) */}
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <h3>Gelişmeler Yakından Takip Ediliyor</h3>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              </p>
-              <blockquote>
-                "Bu olay, sektörde dönüm noktası olarak kabul ediliyor. Gelecek günler çok daha hareketli geçecek."
-              </blockquote>
-              <p>
-                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-              </p>
+            {/* İçerik */}
+            <div className="prose prose-lg max-w-none text-gray-800">
+              {news.content ? (
+                // Eğer RSS'ten gelen HTML içerik varsa onu bas (güvenlik için sanitize edilmeli ama şimdilik direct basıyoruz)
+                <div dangerouslySetInnerHTML={{ __html: news.content }} />
+              ) : (
+                // Yoksa özeti büyükçe göster
+                <p className="lead">{news.summary}</p>
+              )}
+              
+              {/* Kaynak Linki Butonu */}
+              {news.link && (
+                <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
+                  <p className="text-gray-600 mb-4">Bu haberin detayı ve tüm görselleri için kaynağı ziyaret edebilirsiniz.</p>
+                  <a 
+                    href={news.link} 
+                    target="_blank" 
+                    rel="nofollow noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold rounded hover:bg-red-700 transition-colors"
+                  >
+                    Haberin Devamını Oku <LinkIcon size={16} />
+                  </a>
+                </div>
+              )}
             </div>
 
             {/* Paylaşım Butonları */}
