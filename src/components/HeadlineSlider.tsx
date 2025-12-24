@@ -8,9 +8,10 @@ import { NewsItem } from '@/lib/data';
 
 interface HeadlineSliderProps {
   news: NewsItem[];
+  lang?: string;
 }
 
-export default function HeadlineSlider({ news }: HeadlineSliderProps) {
+export default function HeadlineSlider({ news, lang = 'tr' }: HeadlineSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function HeadlineSlider({ news }: HeadlineSliderProps) {
           {news[currentIndex].category}
         </span>
         <h2 className="text-2xl md:text-4xl font-bold text-white mb-2 leading-tight max-w-4xl">
-          <Link href={`/news/${encodeURIComponent(news[currentIndex].id)}`} className="hover:underline decoration-primary decoration-2 underline-offset-4">
+          <Link href={`/${lang}/news/${encodeURIComponent(news[currentIndex].id)}`} className="hover:underline decoration-primary decoration-2 underline-offset-4">
             {news[currentIndex].title}
           </Link>
         </h2>

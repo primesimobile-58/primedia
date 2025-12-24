@@ -61,7 +61,7 @@ export default async function FinancePage({ params: { lang } }: { params: { lang
             <h2 className="text-2xl font-bold font-serif text-gray-900 border-b pb-2">{dict.nav.economy} {dict.common.breaking_news}</h2>
             <div className="flex flex-col gap-4">
               {safeNews.slice(0, 10).map(news => (
-                 <NewsCard key={news.id} news={news} readMoreText={dict.common.read_more} />
+                 <NewsCard key={news.id} news={news} readMoreText={dict.common.read_more} lang={lang} />
               ))}
             </div>
           </div>

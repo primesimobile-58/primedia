@@ -140,7 +140,7 @@ export default async function NewsDetail({ params }: PageProps) {
               <div className="space-y-6">
                 {relatedNews.length > 0 ? (
                   relatedNews.map(item => (
-                    <NewsCard key={item.id} news={item} />
+                    <NewsCard key={item.id} news={item} lang={lang} />
                   ))
                 ) : (
                   <p className="text-gray-500 text-sm">Bu kategoride başka haber bulunamadı.</p>

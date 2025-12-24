@@ -64,7 +64,7 @@ export default async function CategoryPage({ params }: PageProps) {
         {categoryNews.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {categoryNews.map((news) => (
-              <NewsCard key={news.id} news={news} />
+              <NewsCard key={news.id} news={news} lang={lang} />
             ))}
           </div>
         ) : (

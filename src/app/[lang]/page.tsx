@@ -93,7 +93,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {safeTech.slice(0, 4).map(news => (
-              <NewsCard key={news.id} news={news} readMoreText={dict.common.read_more} />
+              <NewsCard key={news.id} news={news} readMoreText={dict.common.read_more} lang={lang} />
             ))}
           </div>
         </div>
