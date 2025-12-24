@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Locale } from '@/i18n-config';
 import NewsCard from '@/components/NewsCard';
+import NewsContent from '@/components/NewsContent';
 import Footer from '@/components/Footer';
 import { getDictionary } from '@/lib/get-dictionary';
 import { getNewsById } from '@/lib/rss';
@@ -101,31 +102,8 @@ export default async function NewsDetail({ params }: PageProps) {
               {news.summary}
             </p>
 
-            {/* İçerik */}
-            <div className="prose prose-lg max-w-none text-gray-800">
-              {news.content ? (
-                // Eğer RSS'ten gelen HTML içerik varsa onu bas (güvenlik için sanitize edilmeli ama şimdilik direct basıyoruz)
-                <div dangerouslySetInnerHTML={{ __html: news.content }} />
-              ) : (
-                // Yoksa özeti büyükçe göster
-                <p className="lead">{news.summary}</p>
-              )}
-              
-              {/* Kaynak Linki Butonu */}
-              {news.link && (
-                <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
-                  <p className="text-gray-600 mb-4">Bu haberin detayı ve tüm görselleri için kaynağı ziyaret edebilirsiniz.</p>
-                  <a 
-                    href={news.link} 
-                    target="_blank" 
-                    rel="nofollow noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white font-bold rounded hover:bg-red-700 transition-colors"
-                  >
-                    Haberin Devamını Oku <LinkIcon size={16} />
-                  </a>
-                </div>
-              )}
-            </div>
+            {/* İçerik ve Okuma Modu */}
+            <NewsContent content={news.content} summary={news.summary} link={news.link} />
 
             {/* Paylaşım Butonları */}
             <div className="mt-10 pt-8 border-t border-gray-100">

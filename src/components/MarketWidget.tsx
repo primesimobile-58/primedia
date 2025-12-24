@@ -9,14 +9,15 @@ interface MarketWidgetProps {
 
 export default function MarketWidget({ dict, data = [], lang = 'tr' }: MarketWidgetProps) {
   return (
-    <div className="bg-primary text-white py-2 text-xs border-b border-white/10">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center gap-6 overflow-x-auto no-scrollbar whitespace-nowrap">
-          <div className="font-bold text-secondary flex items-center gap-2">
-            <TrendingUp size={16} />
-            <span>{dict?.common?.currency || 'PİYASALAR'}</span>
-          </div>
-          {data.map((item, index) => {
+    <div className="bg-primary text-white py-2 text-xs border-b border-white/10 overflow-hidden relative group">
+      <div className="container mx-auto px-4 flex items-center">
+        <div className="font-bold text-secondary flex items-center gap-2 z-10 bg-primary pe-4 shadow-[10px_0_10px_-5px_rgba(15,23,42,1)] absolute left-0 h-full">
+          <TrendingUp size={16} />
+          <span className="hidden sm:inline">{dict?.common?.currency || 'PİYASALAR'}</span>
+        </div>
+        
+        <div className="flex items-center gap-8 animate-marquee whitespace-nowrap hover:paused ps-32">
+          {[...data, ...data].map((item, index) => { // Duplicate for seamless loop effect
             const isUp = item.change >= 0;
             const isDown = item.change < 0;
             const locale = lang === 'ar' ? 'ar-SA' : lang === 'en' ? 'en-US' : 'tr-TR';

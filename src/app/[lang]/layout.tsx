@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/get-dictionary";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MarketWidget from "@/components/MarketWidget";
+import AppBanner from "@/components/AppBanner";
 import { fetchMarketData } from "@/lib/finance";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -52,10 +53,13 @@ export default async function RootLayout({
   return (
     <html lang={params.lang} dir={dir}>
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-gray-50 text-gray-900`}>
-        <MarketWidget dict={dict} data={marketData} lang={params.lang} />
-        <Navbar lang={params.lang} dict={dict} />
+        <header className="sticky top-0 z-50 w-full">
+          <MarketWidget dict={dict} data={marketData} lang={params.lang} />
+          <Navbar lang={params.lang} dict={dict} />
+        </header>
         {children}
         <Footer lang={params.lang} dict={dict} />
+        <AppBanner lang={params.lang} />
       </body>
     </html>
   );

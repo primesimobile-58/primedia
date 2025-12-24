@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Menu, Search, User, X } from 'lucide-react';
 import { useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
+import WeatherWidget from './WeatherWidget';
 
 interface NavbarProps {
   lang: string;
@@ -27,7 +28,7 @@ export default function Navbar({ lang, dict }: NavbarProps) {
   ];
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50 shadow-sm transition-all duration-300">
+    <nav className="bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-all duration-300">
       <div className="container mx-auto px-4">
         {/* Top Bar */}
         <div className="flex items-center justify-between h-20">
