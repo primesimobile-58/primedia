@@ -240,6 +240,14 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     }).filter(item => item !== null) as NewsItem[];
   } catch (error) {
     console.error(`Error fetching RSS for ${lang}/${category}:`, error);
+    // FALLBACK: If RSS fails, return mock data for this category to avoid empty pages
+    // Filter mockNews by category
+    const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
+    const mockFallback = mockNews.filter(n => n.category.toLowerCase() === category.toLowerCase());
+    if (mockFallback.length > 0) {
+       console.log(`Using mock fallback for ${category}`);
+       return mockFallback;
+    }
     return [];
   }
 }
