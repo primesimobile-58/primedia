@@ -23,8 +23,8 @@ const RSS_SOURCES: RSSSource = {
     general: 'https://www.mynet.com/haber/rss/sondakika', // Mynet - Kullanıcı isteği üzerine gündem referansı
     world: 'https://feeds.bbci.co.uk/turkce/rss.xml', // BBC Türkçe - Global kalite
     technology: 'https://www.donanimhaber.com/rss/tum/', 
-    sports: 'https://www.ntvspor.net/rss', 
-    magazine: 'https://www.magazinkolik.com/rss.php', 
+    sports: 'https://www.fotomac.com.tr/rss/anasayfa.xml', 
+    magazine: 'https://www.milliyet.com.tr/rss/rssnew/magazinrss.xml', 
     economy: 'https://www.bloomberght.com/rss',
     health: 'https://www.cnnturk.com/feed/rss/saglik/news',
     culture: 'https://www.ntv.com.tr/sanat.rss',
@@ -164,18 +164,23 @@ export async function getAllNews(lang: string): Promise<NewsItem[]> {
 }
 
 export async function getNewsById(id: string, lang: string): Promise<NewsItem | undefined> {
+  // Helper to match IDs robustly against encoding differences
+  const isMatch = (newsId: string) => {
+    return newsId === id || newsId === decodeURIComponent(id);
+  };
+
   // 0. Check mockNews first (for static content)
-  const mockFound = mockNews.find(n => n.id === id);
+  const mockFound = mockNews.find(n => isMatch(n.id));
   if (mockFound) return mockFound;
 
   // 1. Try fetching just the general/breaking first as it's most likely there
   let news = await fetchNews(lang, 'general');
-  let found = news.find(n => n.id === id);
+  let found = news.find(n => isMatch(n.id));
   if (found) return found;
 
   // 2. If not found, fetch everything (heavy but necessary without DB)
   const allNews = await getAllNews(lang);
-  return allNews.find(n => n.id === id);
+  return allNews.find(n => isMatch(n.id));
 }
 
 export async function fetchNews(lang: string, category: string = 'general'): Promise<NewsItem[]> {
