@@ -1,4 +1,5 @@
 import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { i18n, type Locale } from "@/i18n-config";
 import { getDictionary } from "@/lib/get-dictionary";
@@ -60,6 +61,7 @@ export default async function RootLayout({
         {children}
         <Footer lang={params.lang} dict={dict} />
         <AppBanner lang={params.lang} />
+        <Analytics />
       </body>
     </html>
   );
