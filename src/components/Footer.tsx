@@ -37,6 +37,9 @@ export default function Footer({ lang, dict }: FooterProps) {
               <li><Link href="#" className="hover:text-white transition-colors">{dict.footer.about}</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">{dict.footer.contact}</Link></li>
               <li><Link href="#" className="hover:text-white transition-colors">{dict.footer.privacy}</Link></li>
+              <li><Link href={`/${lang}/admin`} className="hover:text-white transition-colors text-xs opacity-50 hover:opacity-100 flex items-center gap-1">
+                Yönetici Girişi
+              </Link></li>
             </ul>
           </div>
 

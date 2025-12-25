@@ -9,6 +9,7 @@ import NewsContent from '@/components/NewsContent';
 import Footer from '@/components/Footer';
 import { getDictionary } from '@/lib/get-dictionary';
 import { getNewsById } from '@/lib/rss';
+import Advertisement from '@/components/Advertisement';
 
 interface PageProps {
   params: {
@@ -128,8 +129,8 @@ export default async function NewsDetail({ params }: PageProps) {
           {/* Sağ Kolon: Kenar Çubuğu (4 birim) */}
           <aside className="lg:col-span-4 space-y-8">
              {/* Reklam Alanı */}
-            <div className="bg-gray-100 rounded-lg h-[300px] flex items-center justify-center text-gray-400 border border-dashed border-gray-300 sticky top-24">
-              Reklam Alanı (300x600)
+            <div className="sticky top-24">
+              <Advertisement format="vertical" slot="news-sidebar" />
             </div>
 
             {/* Benzer Haberler */}

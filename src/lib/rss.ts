@@ -1,5 +1,6 @@
 import Parser from 'rss-parser';
-import { NewsItem, mockNews } from './data';
+import { NewsItem, mockNews, CUSTOM_NEWS_ITEM } from './data';
+import { getNews as getLocalNews } from './news-service';
 
 const parser = new Parser({
   customFields: {
@@ -14,38 +15,93 @@ const parser = new Parser({
 
 type RSSSource = {
   [key: string]: { // lang
-    [key: string]: string; // category -> url
+    [key: string]: string[]; // category -> url[]
   };
 };
 
 const RSS_SOURCES: RSSSource = {
   tr: {
-    general: 'https://www.mynet.com/haber/rss/sondakika', // Mynet - Kullanıcı isteği üzerine gündem referansı
-    world: 'https://feeds.bbci.co.uk/turkce/rss.xml', // BBC Türkçe - Global kalite
-    technology: 'https://www.donanimhaber.com/rss/tum/', 
-    sports: 'https://www.fotomac.com.tr/rss/anasayfa.xml', 
-    magazine: 'https://www.milliyet.com.tr/rss/rssnew/magazinrss.xml', 
-    economy: 'https://www.bloomberght.com/rss',
-    health: 'https://www.cnnturk.com/feed/rss/saglik/news',
-    culture: 'https://www.ntv.com.tr/sanat.rss',
+    general: [
+      'https://www.mynet.com/haber/rss/sondakika',
+      'https://www.hurriyet.com.tr/rss/anasayfa',
+      'https://www.milliyet.com.tr/rss/rssnew/sondakikarss.xml',
+      'https://www.sabah.com.tr/rss/anasayfa.xml',
+      'https://www.haberturk.com/rss/manset.xml',
+      'https://www.cnnturk.com/feed/rss/all/news',
+      'https://www.cumhuriyet.com.tr/rss/son_dakika.xml'
+    ],
+    world: [
+      'https://feeds.bbci.co.uk/turkce/rss.xml',
+      'https://rss.dw.com/xml/rss-tur-all',
+      'https://tr.euronews.com/rss'
+    ],
+    technology: [
+      'https://www.donanimhaber.com/rss/tum/',
+      'https://www.webtekno.com/rss.xml',
+      'https://shiftdelete.net/feed',
+      'https://www.technopat.net/feed/'
+    ],
+    sports: [
+      'https://www.fotomac.com.tr/rss/anasayfa.xml',
+      'https://www.sabah.com.tr/rss/spor.xml',
+      'https://www.trtspor.com.tr/rss',
+      'https://www.aspor.com.tr/rss/anasayfa.xml'
+    ],
+    magazine: [
+      'https://www.milliyet.com.tr/rss/rssnew/magazinrss.xml',
+      'https://www.hurriyet.com.tr/rss/magazin'
+    ],
+    economy: [
+      'https://www.bloomberght.com/rss',
+      'https://www.ekonomist.com.tr/rss',
+      'https://www.dunya.com/rss'
+    ],
+    health: [
+      'https://www.cnnturk.com/feed/rss/saglik/news',
+      'https://www.ntv.com.tr/saglik.rss'
+    ],
+    culture: [
+      'https://www.ntv.com.tr/sanat.rss'
+    ],
   },
   en: {
-    general: 'http://feeds.bbci.co.uk/news/rss.xml',
-    world: 'http://feeds.bbci.co.uk/news/world/rss.xml',
-    technology: 'http://feeds.bbci.co.uk/news/technology/rss.xml',
-    sports: 'http://feeds.bbci.co.uk/sport/rss.xml',
-    economy: 'http://feeds.bbci.co.uk/news/business/rss.xml',
-    health: 'http://feeds.bbci.co.uk/news/health/rss.xml',
-    culture: 'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml',
+    general: [
+      'http://feeds.bbci.co.uk/news/rss.xml',
+      'http://rss.cnn.com/rss/edition.rss',
+      'https://www.aljazeera.com/xml/rss/all.xml'
+    ],
+    world: [
+      'http://feeds.bbci.co.uk/news/world/rss.xml',
+      'http://rss.cnn.com/rss/edition_world.rss'
+    ],
+    technology: [
+      'http://feeds.bbci.co.uk/news/technology/rss.xml',
+      'https://techcrunch.com/feed/',
+      'https://www.theverge.com/rss/index.xml'
+    ],
+    sports: [
+      'http://feeds.bbci.co.uk/sport/rss.xml',
+      'https://www.espn.com/espn/rss/news'
+    ],
+    economy: [
+      'http://feeds.bbci.co.uk/news/business/rss.xml',
+      'https://www.cnbc.com/id/10000664/device/rss/rss.html'
+    ],
+    health: [
+      'http://feeds.bbci.co.uk/news/health/rss.xml'
+    ],
+    culture: [
+      'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml'
+    ],
   },
   ar: {
-    general: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e', 
-    world: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
-    technology: 'https://www.aljazeera.net/aljazeerarss/c4e88383-a795-40b9-b5c4-7d5264b38343',
-    sports: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
-    economy: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
-    health: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
-    culture: 'https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e',
+    general: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'], 
+    world: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'],
+    technology: ['https://www.aljazeera.net/aljazeerarss/c4e88383-a795-40b9-b5c4-7d5264b38343'],
+    sports: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'],
+    economy: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'],
+    health: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'],
+    culture: ['https://www.aljazeera.net/aljazeerarss/a7c186be-15e1-4bd4-96d2-335b56ca7d7e'],
   }
 };
 
@@ -169,6 +225,24 @@ export async function getNewsById(id: string, lang: string): Promise<NewsItem | 
     return newsId === id || newsId === decodeURIComponent(id);
   };
 
+  // -1. Check CUSTOM NEWS first
+  if (isMatch(CUSTOM_NEWS_ITEM.id)) {
+    return {
+       ...CUSTOM_NEWS_ITEM,
+       date: new Date().toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
+       time: new Date().toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' })
+    };
+  }
+
+  // -0.5 Check Local Generated News (Master Editor)
+  try {
+    const localNews = await getLocalNews();
+    const localFound = localNews.find(n => isMatch(n.id));
+    if (localFound) return localFound;
+  } catch (e) {
+    console.error('Error fetching local news in getNewsById:', e);
+  }
+
   // 0. Check mockNews first (for static content)
   const mockFound = mockNews.find(n => isMatch(n.id));
   if (mockFound) return mockFound;
@@ -209,40 +283,159 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
   };
 
   const sourceKey = categoryMap[category] || category;
-  const sourceUrl = RSS_SOURCES[lang]?.[sourceKey] || RSS_SOURCES[lang]?.['general'] || RSS_SOURCES['tr']['general'];
+  const sourceUrls = RSS_SOURCES[lang]?.[sourceKey] || RSS_SOURCES[lang]?.['general'] || RSS_SOURCES['tr']['general'];
+  const urls = Array.isArray(sourceUrls) ? sourceUrls : [sourceUrls];
   
   try {
-    const feed = await parser.parseURL(sourceUrl);
-    
-    return feed.items.map((item, index) => {
-      const id = item.guid || item.link || index.toString();
-      const extractedImage = extractImage(item);
-      const imageUrl = extractedImage || getFallbackImage(sourceKey, id, item.title);
-      
-      // Clean up description (remove HTML tags if necessary, but some components render HTML)
-      // For this project, we'll strip HTML for the summary to be safe
-      const summary = ((item as any).description || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 150) + '...';
-      const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
+    const feedPromises = urls.map(url => 
+      parser.parseURL(url)
+        .then(feed => ({ status: 'fulfilled', value: feed }))
+        .catch(err => {
+          console.error(`Error fetching RSS for ${url}:`, err);
+          return { status: 'rejected', reason: err };
+        })
+    );
 
-      // Check for spam/boring content
-      if (isSpamNews(item.title || '', summary)) {
-        return null;
+    const results = await Promise.all(feedPromises);
+    const successfulFeeds = results
+      .filter((r): r is { status: 'fulfilled', value: any } => r.status === 'fulfilled')
+      .map(r => r.value);
+
+    let allItems: any[] = [];
+    successfulFeeds.forEach(feed => {
+      if (feed && feed.items) {
+        allItems.push(...feed.items);
       }
+    });
 
-      return {
-        id: id, 
-        title: item.title || 'Haber Başlığı',
-        summary: summary,
-        content: (item as any)['content:encoded'] || (item as any).content || (item as any).description || '', // Full content if available
-        link: item.link, // Store original link
-        category: category.charAt(0).toUpperCase() + category.slice(1), 
-        imageUrl: imageUrl,
-        date: pubDate.toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
-        time: pubDate.toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' }),
-        isHeadline: index < 5, 
-        isBreaking: index < 3, 
-      };
-    }).filter(item => item !== null) as NewsItem[];
+    // --- INTEGRATE LOCAL NEWS ---
+    try {
+      const localNews = await getLocalNews();
+      const targetCategory = category.toLowerCase(); // 'general', 'economy', etc.
+      
+      const filteredLocalNews = localNews.filter(item => {
+        const itemCat = item.category.toLowerCase(); // 'gündem', 'ekonomi', etc.
+        
+        // Map common Turkish categories to English keys used in fetchNews
+        const isGeneral = (targetCategory === 'general' || targetCategory === 'gundem') && 
+                          (itemCat === 'gündem' || itemCat === 'general');
+        
+        const isEconomy = (targetCategory === 'economy' || targetCategory === 'ekonomi') && 
+                          (itemCat === 'ekonomi' || itemCat === 'economy');
+
+        const isSports = (targetCategory === 'sports' || targetCategory === 'spor') && 
+                         (itemCat === 'spor' || itemCat === 'sports');
+                         
+        const isTech = (targetCategory === 'technology' || targetCategory === 'teknoloji') && 
+                       (itemCat === 'teknoloji' || itemCat === 'technology');
+                       
+        const isWorld = (targetCategory === 'world' || targetCategory === 'dunya') && 
+                        (itemCat === 'dünya' || itemCat === 'dunya' || itemCat === 'world');
+
+        const isMag = (targetCategory === 'magazine' || targetCategory === 'magazin') && 
+                      (itemCat === 'magazin' || itemCat === 'magazine');
+
+        return isGeneral || isEconomy || isSports || isTech || isWorld || isMag;
+      });
+
+      // Convert local news to RSS item format to be processed below
+      // OR better: just add them to sortedItems directly later.
+      // But to keep logic simple, let's map them to "items"
+      const localItemsAsRSS = filteredLocalNews.map(n => {
+        // Parse "DD.MM.YYYY" and "HH:MM"
+        let dateObj = new Date();
+        try {
+          const [day, month, year] = n.date.split('.');
+          const [hour, minute] = n.time.split(':');
+          dateObj = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hour), parseInt(minute));
+        } catch (e) {
+           // fallback to now
+        }
+
+        return {
+          guid: n.id,
+          title: n.title,
+          description: n.summary,
+          'content:encoded': n.content,
+          link: n.link,
+          pubDate: dateObj.toISOString(),
+          enclosure: { url: n.imageUrl },
+          isLocal: true,
+          rawDate: dateObj
+        };
+      });
+
+      allItems.push(...localItemsAsRSS);
+
+    } catch (e) {
+      console.error('Error integrating local news:', e);
+    }
+    // ----------------------------
+
+    // Deduplicate items based on link or id
+    const uniqueItems = new Map();
+    allItems.forEach(item => {
+      const id = item.guid || item.link;
+      if (!uniqueItems.has(id)) {
+        uniqueItems.set(id, item);
+      }
+    });
+
+    const sortedItems = Array.from(uniqueItems.values())
+      .map((item, index) => {
+        const id = item.guid || item.link || index.toString();
+        const extractedImage = extractImage(item);
+        const imageUrl = extractedImage || getFallbackImage(sourceKey, id, item.title);
+        
+        // Clean up description (remove HTML tags if necessary, but some components render HTML)
+        // For this project, we'll strip HTML for the summary to be safe
+        const summary = ((item as any).description || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 150) + '...';
+        const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
+
+        // Check for spam/boring content
+        if (isSpamNews(item.title || '', summary)) {
+          return null;
+        }
+
+        return {
+          id: id, 
+          title: item.title || 'Haber Başlığı',
+          summary: summary,
+          content: (item as any)['content:encoded'] || (item as any).content || (item as any).description || '', // Full content if available
+          link: item.link, // Store original link
+          category: category.charAt(0).toUpperCase() + category.slice(1), 
+          imageUrl: imageUrl,
+          date: pubDate.toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
+          time: pubDate.toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' }),
+          rawDate: pubDate, // For sorting
+          isHeadline: false, // Will be set after sorting
+          isBreaking: false, 
+        };
+      })
+      .filter(item => item !== null) as (NewsItem & { rawDate: Date })[];
+
+    // Sort by date descending
+    sortedItems.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
+
+    // --- CUSTOM BREAKING NEWS INJECTION (SIMULATION) ---
+    if (lang === 'tr' && category === 'general') {
+      // Add to the TOP of the list
+      sortedItems.unshift({
+        ...CUSTOM_NEWS_ITEM,
+        date: new Date().toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
+        time: new Date().toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' }),
+        rawDate: new Date()
+      });
+    }
+    // ---------------------------------------------------
+
+    // Re-index headline/breaking status
+    return sortedItems.map((item, index) => ({
+      ...item,
+      isHeadline: index < 5,
+      isBreaking: index < 3
+    }));
+
   } catch (error) {
     console.error(`Error fetching RSS for ${lang}/${category}:`, error);
     // FALLBACK: If RSS fails, return mock data for this category to avoid empty pages
@@ -251,6 +444,22 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     const mockFallback = mockNews.filter(n => n.category.toLowerCase() === category.toLowerCase());
     if (mockFallback.length > 0) {
        console.log(`Using mock fallback for ${category}`);
+       
+       // --- CUSTOM BREAKING NEWS INJECTION (FALLBACK SCENARIO) ---
+       if (lang === 'tr' && category === 'general') {
+         const customItem: NewsItem = {
+           ...CUSTOM_NEWS_ITEM,
+           date: new Date().toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA'),
+           time: new Date().toLocaleTimeString(lang === 'tr' ? 'tr-TR' : lang === 'en' ? 'en-US' : 'ar-SA', { hour: '2-digit', minute: '2-digit' }),
+           // rawDate not needed for return type
+         };
+         // @ts-ignore - rawDate is internal
+         delete customItem.rawDate;
+         
+         mockFallback.unshift(customItem);
+       }
+       // -----------------------------------------------------------
+
        return mockFallback;
     }
     return [];

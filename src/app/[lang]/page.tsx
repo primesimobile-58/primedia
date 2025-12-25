@@ -4,13 +4,14 @@ import HeadlineSlider from '@/components/HeadlineSlider';
 import FinanceModule from '@/components/FinanceModule';
 import AuthorsSection from '@/components/AuthorsSection';
 import VideoGallery from '@/components/VideoGallery';
-import { mockNews } from '@/lib/data';
+import { mockNews, CUSTOM_NEWS_ITEM } from '@/lib/data';
 import Link from 'next/link';
 import { ChevronRight, RefreshCw } from 'lucide-react';
 import { getDictionary } from '@/lib/get-dictionary';
 import { Locale } from '@/i18n-config';
 import { fetchNews } from '@/lib/rss';
 import { fetchMarketData } from '@/lib/finance';
+import Advertisement from '@/components/Advertisement';
 
 // Revalidate every 60 seconds (ISR)
 export const revalidate = 60;
@@ -29,7 +30,20 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
   ]);
 
   // Fallback to mock data if RSS fails or is empty (for robustness)
-  const safeGeneral = generalNews.length > 0 ? generalNews : mockNews;
+  let safeGeneral = generalNews.length > 0 ? generalNews : mockNews;
+  
+  // SIMULATION: Force Inject Custom News Item for TR
+  if (lang === 'tr') {
+    const customItem = {
+      ...CUSTOM_NEWS_ITEM,
+      date: new Date().toLocaleDateString('tr-TR'),
+      time: new Date().toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' })
+    };
+    
+    // Remove if exists then unshift to top
+    safeGeneral = [customItem, ...safeGeneral.filter(n => n.id !== CUSTOM_NEWS_ITEM.id)];
+  }
+
   const safeTech = techNewsData.length > 0 ? techNewsData : mockNews.filter(n => n.category === 'Teknoloji');
   const safeSport = sportNewsData.length > 0 ? sportNewsData : mockNews.filter(n => n.category === 'Spor');
   const safeMagazine = magazineNewsData.length > 0 ? magazineNewsData : mockNews.filter(n => n.category === 'Magazin');
@@ -58,6 +72,11 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             {/* Finans Modülü (En Üstte) */}
             <div className="h-[380px]">
               <FinanceModule data={marketData} dict={dict} lang={lang} />
+            </div>
+
+            {/* Sidebar Ad - Rectangle */}
+            <div className="flex justify-center my-2">
+              <Advertisement format="rectangle" slot="home-sidebar" />
             </div>
 
             {/* Yan Haberler */}

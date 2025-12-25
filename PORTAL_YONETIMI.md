@@ -20,10 +20,33 @@ Finans modülü, Yahoo Finance ve TradingView altyapısını kullanır.
 *   **Köşe Yazarları:** `src/lib/data.ts` içindeki `mockAuthors` kısmından yazar ekleyip çıkarabilirsiniz.
 *   **Video Galeri:** Şimdilik `mockVideos` üzerinden yönetilmektedir. İleride YouTube kanalınıza bağlanabilir.
 
-## 4. Reklam Alanları
-Sitede "Reklam Alanı" olarak işaretlenmiş bölgeler `[lang]/news/[id]/page.tsx` ve `MarketWidget.tsx` dosyalarındadır. Google Adsense veya özel reklam kodlarınızı bu kutuların içine yapıştırabilirsiniz.
+## 4. Reklam ve Site Ayarları
+Reklam alanlarını, sosyal medya linklerini ve genel site özelliklerini tek bir dosyadan yönetebilirsiniz.
 
-## 5. Canlıya Alma (Güncelleme)
+*   **Dosya:** `src/site-config.ts`
+*   **Reklamlar:** `ads` bölümüne Google Adsense veya diğer ağların size verdiği "Slot ID"lerini girin.
+    *   `header-top`: Logo üstündeki uzun reklam (728x90)
+    *   `home-sidebar`: Anasayfa sağındaki kutu reklam (300x250)
+    *   `news-sidebar`: Haber detayındaki dikey reklam (300x600)
+    *   `news-content-bottom`: Haber metninin bitimindeki reklam
+*   **Sosyal Medya:** Facebook, Twitter vb. linklerinizi `socials` kısmından güncelleyebilirsiniz.
+*   **Özellikler:** `enableAds: false` yaparak tüm reklamları tek tuşla kapatabilirsiniz.
+
+## 5. Master Editör Araçları (YENİ)
+Sitenizi yönetmek ve içerik üretmek için artık bir yönetim paneline sahipsiniz.
+
+*   **Panel Adresi:** `siteniz.com/tr/admin`
+*   **Özellikler:**
+    *   **Sistem Sağlığı:** RSS kaynaklarının ve entegrasyonların çalışıp çalışmadığını anlık kontrol edebilirsiniz.
+    *   **Haber Üreticisi:** Kod yazmadan özel haber oluşturmanızı sağlar. Formu doldurun, üretilen JSON kodunu kopyalayın ve `src/lib/data.ts` dosyasına yapıştırın.
+
+## 6. SEO ve Analitik (Unicorn Stratejisi)
+Marka olmak için görünürlük şarttır. Bu altyapı hazırlandı:
+
+*   **Google Analytics:** `src/site-config.ts` dosyasındaki `googleAnalyticsId` alanına 'G-XXXXXX' kodunuzu girin. Ziyaretçi takibi otomatik başlar.
+*   **Sitemap & Robots.txt:** Google botları için `sitemap.xml` ve `robots.txt` dosyaları otomatik oluşturulur. Ekstra işlem yapmanıza gerek yoktur.
+
+## 7. Canlıya Alma (Güncelleme)
 Yaptığınız her değişiklikten sonra, kodları GitHub'a göndermeniz yeterlidir. Vercel, değişikliği algılayıp siteyi **otomatik olarak günceller**.
 
 ```bash

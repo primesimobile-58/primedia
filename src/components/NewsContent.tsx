@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Minus, Plus, Link as LinkIcon } from 'lucide-react';
+import Advertisement from './Advertisement';
 
 interface NewsContentProps {
   content?: string;
@@ -55,6 +56,9 @@ export default function NewsContent({ content, summary, link }: NewsContentProps
           <p className="lead">{summary}</p>
         )}
         
+        {/* In-Article Ad */}
+        <Advertisement format="in-article" slot="news-content-bottom" />
+
         {/* Source Link */}
         {link && (
           <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 text-center not-prose">

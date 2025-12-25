@@ -39,6 +39,10 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
   };
 }
 
+import Advertisement from "@/components/Advertisement";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+
 export default async function RootLayout({
   children,
   params,
@@ -52,7 +56,14 @@ export default async function RootLayout({
 
   return (
     <html lang={params.lang} dir={dir}>
+      <GoogleAnalytics />
+      <AnalyticsTracker />
       <body className={`${inter.variable} ${playfair.variable} font-sans bg-gray-50 text-gray-900`}>
+        {/* Header Ad - Leaderboard */}
+        <div className="container mx-auto px-4 flex justify-center py-2 bg-gray-50">
+          <Advertisement format="leaderboard" slot="header-top" />
+        </div>
+        
         <header className="sticky top-0 z-50 w-full">
           <MarketWidget dict={dict} data={marketData} lang={params.lang} />
           <Navbar lang={params.lang} dict={dict} />
