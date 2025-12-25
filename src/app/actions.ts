@@ -81,6 +81,8 @@ export async function publishNews(prevState: any, formData: FormData) {
     
     // Revalidate cache globally
     revalidatePath('/', 'layout');
+    revalidatePath('/[lang]/admin', 'page');
+    revalidatePath('/[lang]', 'page');
     
     return { success: true, message: 'Haber başarıyla yayınlandı!' }
   } catch (error) {

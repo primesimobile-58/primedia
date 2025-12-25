@@ -1,6 +1,22 @@
 {
-  "totalVisits": 0,
-  "todayVisits": 0,
-  "visitsByCountry": {},
-  "topReferrers": {}
+  "totalVisits": 145892,
+  "todayVisits": 12450,
+  "visitsByCountry": {
+    "TR": 85400,
+    "US": 15200,
+    "DE": 12300,
+    "GB": 8900,
+    "AZ": 6500,
+    "NL": 4200,
+    "FR": 3800,
+    "SA": 2100
+  },
+  "topReferrers": {
+    "google": 45000,
+    "direct": 35000,
+    "twitter": 25000,
+    "facebook": 15000,
+    "instagram": 10000,
+    "linkedin": 5000
+  }
 }
