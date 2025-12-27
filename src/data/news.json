@@ -39,7 +39,7 @@
     "time": "11:19",
     "rawDate": "2025-12-27T08:19:41.000Z",
     "isHeadline": true,
-    "isBreaking": false
+    "isBreaking": true
   },
   {
     "id": "694cbd1b39465790ca553813",
@@ -66,7 +66,7 @@
     "date": "27.12.2025",
     "time": "11:19",
     "rawDate": "2025-12-27T08:19:17.000Z",
-    "isHeadline": false,
+    "isHeadline": true,
     "isBreaking": false
   },
   {
@@ -80,7 +80,7 @@
     "date": "27.12.2025",
     "time": "11:09",
     "rawDate": "2025-12-27T08:09:29.000Z",
-    "isHeadline": false,
+    "isHeadline": true,
     "isBreaking": false
   },
   {
@@ -94,7 +94,7 @@
     "date": "27.12.2025",
     "time": "11:06",
     "rawDate": "2025-12-27T08:06:32.000Z",
-    "isHeadline": false,
+    "isHeadline": true,
     "isBreaking": false
   },
   {
@@ -238,6 +238,20 @@
     "isBreaking": false
   },
   {
+    "id": "https://www.cumhuriyet.com.tr/turkiye/yerlikaya-duyurdu-14-ilde-operasyon-156-gocmen-kacakcisina-gozalti-2464928",
+    "title": "Yerlikaya duyurdu... 14 ilde operasyon, 156 göçmen kaçakçısına gözaltı!",
+    "summary": "Bakan Ali Yerlikaya, 14 ilde 2 haftadır yürütülen operasyonlarda 156 göçmen kaçakçısının yakalandığını, 112'sinin tutuklandığını bildirdi....",
+    "content": "Bakan Ali Yerlikaya, 14 ilde 2 haftadır yürütülen operasyonlarda 156 göçmen kaçakçısının yakalandığını, 112'sinin tutuklandığını bildirdi.",
+    "link": "https://www.cumhuriyet.com.tr/turkiye/yerlikaya-duyurdu-14-ilde-operasyon-156-gocmen-kacakcisina-gozalti-2464928",
+    "category": "General",
+    "imageUrl": "https://media.cumhuriyet.com.tr/Archive/cc5d9df6-8134-49af-bf14-70b49bd36024.jpg",
+    "date": "27.12.2025",
+    "time": "08:41",
+    "rawDate": "2025-12-27T05:41:00.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "7510310",
     "title": "Her hali olay! Demet Özdemir'den maskülen tarz",
     "summary": "Kanal D’nin reyting rekortmeni dizisi Eşref Rüya’nın yıldızı başarılı oyuncu Demet Özdemir paylaşımlarıyla beğeni topluyor. Ünlü isim, maskülen tarzıy...",
@@ -247,8 +261,36 @@
     "date": "27.12.2025",
     "time": "08:34",
     "rawDate": "2025-12-27T05:34:36.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/business/2025/12/27/kurtulus-gununden-yasal-mucadelelere-trumpin-calkantilarla-dolu-gumruk-vergileri-yili",
+    "title": "'Kurtuluş Günü'nden yasal mücadelelere: Trump'ın çalkantılarla dolu gümrük vergileri yılı",
+    "summary": "Kapsamlı 'Kurtuluş Günü' vergilerinden mahkeme salonlarındaki mücadelelere ve ani geri dönüşlere kadar, Donald Trump'ın tekrar göreve gelişi ABD ticar...",
+    "content": "Kapsamlı 'Kurtuluş Günü' vergilerinden mahkeme salonlarındaki mücadelelere ve ani geri dönüşlere kadar, Donald Trump'ın tekrar göreve gelişi ABD ticaret politikası için çalkantılı bir yıl oldu.",
+    "link": "http://tr.euronews.com/business/2025/12/27/kurtulus-gununden-yasal-mucadelelere-trumpin-calkantilarla-dolu-gumruk-vergileri-yili",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "27.12.2025",
+    "time": "08:34",
+    "rawDate": "2025-12-27T05:34:44.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "https://haber.mynet.com/istanbul-erkek-lisesi-nde-neler-yasandi-sorusturma-tamamlandi-anlik-degil-planli-2-gece-surmus-110107262181",
+    "title": "İstanbul Erkek Lisesi’nde neler yaşandı? Anlık değil, planlı: 2 gece sürmüş",
+    "summary": "Türkiye’nin gündemine damga vuran İstanbul Erkek Lisesi’ndeki olaylarla ilgili gerçek ortaya çıktı. ‘Taciz’ ve ‘şiddet’ iddialarına ilişkin yürütülen ...",
+    "content": "Türkiye’nin gündemine damga vuran İstanbul Erkek Lisesi’ndeki olaylarla ilgili gerçek ortaya çıktı. ‘Taciz’ ve ‘şiddet’ iddialarına ilişkin yürütülen inceleme ve soruşturma süreci tamamlanırken yaşananların taciz değil, organize ve sistematik bir şiddet vakası olduğu belirtildi. 11'inci sınıftaki şüpheliler için istenen ceza, pazartesi günü belli olacak. İşte İstanbul Erkek Lisesi’nde yaşananlar hakkındaki soruşturmanın tüm detayları…",
+    "link": "https://haber.mynet.com/istanbul-erkek-lisesi-nde-neler-yasandi-sorusturma-tamamlandi-anlik-degil-planli-2-gece-surmus-110107262181",
+    "category": "General",
+    "imageUrl": "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=800&auto=format&fit=crop",
+    "date": "27.12.2025",
+    "time": "08:33",
+    "rawDate": "2025-12-27T05:33:08.000Z",
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.donanimhaber.com/mit-ten-siber-casusluk-operasyonu-8-internet-sitesi-kapatildi--200183",
@@ -261,8 +303,8 @@
     "date": "27.12.2025",
     "time": "08:30",
     "rawDate": "2025-12-27T05:30:00.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.cumhuriyet.com.tr/turkiye/libya-heyetinin-adli-tip-kurumu-ndaki-islemleri-tamamlandi-2464927",
@@ -302,8 +344,8 @@
     "date": "27.12.2025",
     "time": "08:21",
     "rawDate": "2025-12-27T05:21:00.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "7510305",
@@ -329,8 +371,8 @@
     "date": "27.12.2025",
     "time": "08:12",
     "rawDate": "2025-12-27T05:12:20.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.sabah.com.tr/spor/futbol/2025/12/27/galatasarayda-baris-alper-yilmaz-pisman-etmedi",
@@ -343,8 +385,8 @@
     "date": "27.12.2025",
     "time": "08:07",
     "rawDate": "2025-12-27T05:07:37.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "7510304",
@@ -356,8 +398,8 @@
     "date": "27.12.2025",
     "time": "08:07",
     "rawDate": "2025-12-27T05:07:39.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.sabah.com.tr/spor/futbol/2025/12/27/fenerbahcede-rodrigo-becao-icin-hesap-zamani",
@@ -370,8 +412,8 @@
     "date": "27.12.2025",
     "time": "08:03",
     "rawDate": "2025-12-27T05:03:13.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://shiftdelete.net/?p=1212233",
@@ -384,8 +426,8 @@
     "date": "27.12.2025",
     "time": "08:00",
     "rawDate": "2025-12-27T05:00:00.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.sabah.com.tr/spor/futbol/2025/12/27/musaba-ferdi-kadioglunun-cocukluk-arkadasi-cikti",
@@ -398,7 +440,7 @@
     "date": "27.12.2025",
     "time": "08:00",
     "rawDate": "2025-12-27T05:00:27.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -412,7 +454,7 @@
     "date": "27.12.2025",
     "time": "07:56",
     "rawDate": "2025-12-27T04:56:39.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -439,8 +481,8 @@
     "date": "27.12.2025",
     "time": "07:55",
     "rawDate": "2025-12-27T04:55:00.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.hurriyet.com.tr/kelebek/televizyon/mini-dizilerle-dunya-sahnesinde-43068234",
@@ -535,8 +577,8 @@
     "date": "27.12.2025",
     "time": "07:36",
     "rawDate": "2025-12-27T04:36:00.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://haber.mynet.com/operasyon-an-meselesi-sdg-icin-sure-doluyor-suriye-ordusunun-hazirliklari-bitti-110107262155",
@@ -562,8 +604,8 @@
     "date": "27.12.2025",
     "time": "07:34",
     "rawDate": "2025-12-27T04:34:39.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.dunya.com/finans/dolar/dolar-kac-tl-oldu-euro-ne-kadar-27-aralik-cumartesi-doviz-kurlari-haberi-809015",
@@ -576,7 +618,7 @@
     "date": "27.12.2025",
     "time": "07:24",
     "rawDate": "2025-12-27T04:24:00.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -590,7 +632,7 @@
     "date": "27.12.2025",
     "time": "07:15",
     "rawDate": "2025-12-27T04:15:00.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -603,7 +645,7 @@
     "date": "27.12.2025",
     "time": "07:14",
     "rawDate": "2025-12-27T04:14:36.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -774,7 +816,7 @@
     "date": "27.12.2025",
     "time": "07:01",
     "rawDate": "2025-12-27T04:01:54.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -3369,8 +3411,8 @@
     "date": "27.12.2025",
     "time": "02:00",
     "rawDate": "2025-12-26T23:00:01.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.sabah.com.tr/spor/futbol/2025/12/26/fas-afrika-uluslar-kupasinda-liderligini-surdurdu",
@@ -3929,8 +3971,8 @@
     "date": "26.12.2025",
     "time": "23:47",
     "rawDate": "2025-12-26T20:47:26.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.ekonomist.com.tr/egitim/auzef-sinav-giris-belgesi-yayinlandi-mi-auzef-guz-donemi-final-sinavi-ne-zaman--69335",
@@ -3971,7 +4013,7 @@
     "date": "26.12.2025",
     "time": "23:30",
     "rawDate": "2025-12-26T20:30:00.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -4083,7 +4125,7 @@
     "date": "26.12.2025",
     "time": "23:00",
     "rawDate": "2025-12-26T20:00:00.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -4311,6 +4353,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/2025/12/26/paris-metrosunda-bicakli-saldiri-uc-kadin-yaralandi",
+    "title": "Paris metrosunda bıçaklı saldırı: Üç kadın yaralandı",
+    "summary": "Cuma günü Paris metrosunun 3 istasyonunda bir adam üç kadını bıçakladı. Yaralılara müdahale edildiği ve şüphelinin güvenlik kameraları ile telefon kay...",
+    "content": "Cuma günü Paris metrosunun 3 istasyonunda bir adam üç kadını bıçakladı. Yaralılara müdahale edildiği ve şüphelinin güvenlik kameraları ile telefon kayıtları aracılığıyla kısa sürede yakalandığı bildirildi.",
+    "link": "http://tr.euronews.com/2025/12/26/paris-metrosunda-bicakli-saldiri-uc-kadin-yaralandi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "22:29",
+    "rawDate": "2025-12-26T19:29:49.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.ekonomist.com.tr/haberler/yilbasi-tatili-ne-zaman-kac-gun-31-aralik-yarim-gun-mu--69333",
     "title": "Yılbaşı tatili ne zaman, kaç gün? 31 Aralık yarım gün mü?",
     "summary": "2026 yılına sayılı günler kala, milyonlarca çalışan ve öğrencinin en çok merak ettiği yılbaşı tatili takvimi netleşti. 1 Ocak 2026'nın hafta ortasına ...",
@@ -4377,6 +4433,20 @@
     "date": "26.12.2025",
     "time": "22:16",
     "rawDate": "2025-12-26T19:16:00.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/next/2025/12/26/gmailde-devrim-e-posta-adresini-degistirmek-artik-mumkun",
+    "title": "Gmail’de devrim: E-posta adresini düzenlemek artık mümkün",
+    "summary": "Hindistan'daki Google destek sayfalarında tesadüfen ortaya çıkan yeni bilgiler, Gmail ile ilgili katı bir kuralın tarihe karıştığını gösteriyor....",
+    "content": "Hindistan'daki Google destek sayfalarında tesadüfen ortaya çıkan yeni bilgiler, Gmail ile ilgili katı bir kuralın tarihe karıştığını gösteriyor.",
+    "link": "http://tr.euronews.com/next/2025/12/26/gmailde-devrim-e-posta-adresini-degistirmek-artik-mumkun",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "22:15",
+    "rawDate": "2025-12-26T19:15:26.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -4549,6 +4619,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/kultur/2025/12/26/150-yillik-yuzlerce-ayakkabi-karaya-vurdu",
+    "title": "150 yıllık yüzlerce ayakkabı karaya vurdu",
+    "summary": "Kâr amacı gütmeyen Beach Academy grubunun yürüttüğü kaya havuzu restorasyon çalışmaları sırasında yüzlerce eski ayakkabı gün yüzüne çıktı....",
+    "content": "Kâr amacı gütmeyen Beach Academy grubunun yürüttüğü kaya havuzu restorasyon çalışmaları sırasında yüzlerce eski ayakkabı gün yüzüne çıktı.",
+    "link": "http://tr.euronews.com/kultur/2025/12/26/150-yillik-yuzlerce-ayakkabi-karaya-vurdu",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "21:23",
+    "rawDate": "2025-12-26T18:23:25.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.cumhuriyet.com.tr/spor/fenerbahce-ile-anlastigi-iddia-edilmisti-anthony-musaba-istanbul-a-geldi-2464838",
     "title": "Fenerbahçe ile anlaştığı iddia edilmişti... Anthony Musaba, İstanbul'a geldi! ",
     "summary": "Fenerbahçe'nin anlaşmaya vardığı iddia edilen Anthony Musaba, temsilcisiyle birlikte İstanbul'a geldi....",
@@ -4601,8 +4685,8 @@
     "date": "26.12.2025",
     "time": "21:11",
     "rawDate": "2025-12-26T18:11:49.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.donanimhaber.com/yeni-nesil-amd-ekran-kartlari-2027-de-piyasaya-cikabilir--200171",
@@ -4993,8 +5077,22 @@
     "date": "26.12.2025",
     "time": "20:19",
     "rawDate": "2025-12-26T17:19:29.000Z",
-    "isHeadline": true,
-    "isBreaking": true
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/next/2025/12/26/teknoloji-milyarderleri-miras-ordulari-kuruyor-bazilarinin-100er-cocugu-var",
+    "title": "Teknoloji milyarderleri 'miras orduları' kuruyor: Bazılarının 100'er çocuğu var",
+    "summary": "Teknoloji dünyasında \"nüfus çöküşü\" teorisine inanan ve genetik miraslarını devam ettirmek için çok sayıda çocuk sahibi olmayı bir görev gibi gören \"p...",
+    "content": "Teknoloji dünyasında \"nüfus çöküşü\" teorisine inanan ve genetik miraslarını devam ettirmek için çok sayıda çocuk sahibi olmayı bir görev gibi gören \"pronatalist\" (doğum yanlısı) bir akım var.",
+    "link": "http://tr.euronews.com/next/2025/12/26/teknoloji-milyarderleri-miras-ordulari-kuruyor-bazilarinin-100er-cocugu-var",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "20:18",
+    "rawDate": "2025-12-26T17:18:44.000Z",
+    "isHeadline": false,
+    "isBreaking": false
   },
   {
     "id": "https://www.donanimhaber.com/cin-in-maglev-treni-2-saniyede-700-km-s-hiza-ulasarak-rekor-kirdi--200177",
@@ -5231,7 +5329,7 @@
     "date": "26.12.2025",
     "time": "19:33",
     "rawDate": "2025-12-26T16:33:26.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -5371,7 +5469,7 @@
     "date": "26.12.2025",
     "time": "19:20",
     "rawDate": "2025-12-26T16:20:00.000Z",
-    "isHeadline": true,
+    "isHeadline": false,
     "isBreaking": false
   },
   {
@@ -5455,6 +5553,20 @@
     "date": "26.12.2025",
     "time": "19:05",
     "rawDate": "2025-12-26T16:05:00.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/gezi/2025/12/26/polonya-avrupalilar-arasinda-en-populer-tatil-destinasyonu-secildi",
+    "title": "Polonya Avrupalılar arasında en popüler tatil destinasyonu seçildi",
+    "summary": "Seyahat endüstrisinin önde gelen küresel medya platformu Travel and Tour World (TTW) tarafından yapılan sıralamaya göre, Polonya bu yıl Avrupalıların ...",
+    "content": "Seyahat endüstrisinin önde gelen küresel medya platformu Travel and Tour World (TTW) tarafından yapılan sıralamaya göre, Polonya bu yıl Avrupalıların kısa Noel ve Yılbaşı seyahatleri için favori destinasyonları arasında yer aldı.",
+    "link": "http://tr.euronews.com/gezi/2025/12/26/polonya-avrupalilar-arasinda-en-populer-tatil-destinasyonu-secildi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "19:04",
+    "rawDate": "2025-12-26T16:04:07.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -5553,6 +5665,20 @@
     "date": "26.12.2025",
     "time": "18:40",
     "rawDate": "2025-12-26T15:40:00.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/my-europe/2025/12/26/nato-genel-sekreteri-rutteden-net-mesaj-abdsiz-guvenlik-olmaz",
+    "title": "NATO Genel Sekreteri Rutte'den net mesaj: ABD’siz güvenlik olmaz",
+    "summary": "Rutte, ABD ile Avrupa’nın özellikle Arktik bölge ve Kuzey Atlantik’in savunulmasında ortak çıkarları olduğunu söyledi....",
+    "content": "Rutte, ABD ile Avrupa’nın özellikle Arktik bölge ve Kuzey Atlantik’in savunulmasında ortak çıkarları olduğunu söyledi.",
+    "link": "http://tr.euronews.com/my-europe/2025/12/26/nato-genel-sekreteri-rutteden-net-mesaj-abdsiz-guvenlik-olmaz",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "18:31",
+    "rawDate": "2025-12-26T15:31:31.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -5767,6 +5893,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/2025/12/26/mesem-protestosu-nedeniyle-tutuklanan-16-tipli-ogrenci-serbest-birakildi",
+    "title": "MESEM protestosu nedeniyle tutuklanan 16 TİP'li öğrenci serbest bırakıldı",
+    "summary": "Yetersiz iş güvenliği nedeniyle MESEM programlarında çocuklar ezilme, düşme, makine kazaları gibi olaylarda hayatını kaybediyor....",
+    "content": "Yetersiz iş güvenliği nedeniyle MESEM programlarında çocuklar ezilme, düşme, makine kazaları gibi olaylarda hayatını kaybediyor.",
+    "link": "http://tr.euronews.com/2025/12/26/mesem-protestosu-nedeniyle-tutuklanan-16-tipli-ogrenci-serbest-birakildi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "18:02",
+    "rawDate": "2025-12-26T15:02:25.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.hurriyet.com.tr/gundem/samsunda-sahile-vuran-gizemli-sandik-uzerinde-dikkat-ceken-yazilar-43067897",
     "title": "Samsun'da sahile vuran gizemli sandık! Üzerinde dikkat çeken yazılar",
     "summary": "Samsun’da sahile vuran, üzerinde Rusça yazılar bulunduğu belirlenen sandık, polis ekipleri tarafından incelemeye alındı....",
@@ -5976,6 +6116,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/video/2025/12/26/banksynin-walled-off-hoteli-beytullahimde-iki-yil-kapali-kaldiktan-sonra-yeniden-acildi",
+    "title": "Banksy'nin sanat ve direnişi buluşturduğu 'oteli' yeniden açıldı",
+    "summary": "Banksy burayı ironik biçimde 'dünyanın en kötü manzaralı oteli' olarak tanımladı. Amaç, İsrail işgalini ve Filistinlilerin günlük yaşamda maruz kaldığ...",
+    "content": "Banksy burayı ironik biçimde 'dünyanın en kötü manzaralı oteli' olarak tanımladı. Amaç, İsrail işgalini ve Filistinlilerin günlük yaşamda maruz kaldığı kısıtlamaları görünür kılmak.",
+    "link": "http://tr.euronews.com/video/2025/12/26/banksynin-walled-off-hoteli-beytullahimde-iki-yil-kapali-kaldiktan-sonra-yeniden-acildi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:40",
+    "rawDate": "2025-12-26T14:40:28.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.hurriyet.com.tr/gundem/super-lotoda-6-bildi-105-milyon-tllik-ikramiyeyi-kazandi-dev-ikramiye-o-ilimize-cikti-kendisi-buraya-geldi-cok-mutluydu-43067865",
     "title": "Süper Loto’da 6 bildi 105 milyon TL'lik ikramiyeyi kazandı! Dev ikramiye o ilimize çıktı! 'Kendisi buraya geldi çok mutluydu'",
     "summary": "Süper Loto’da 6 bilen bir kişi, 105 milyon 524 bin 605 TL’lik büyük ikramiyeyi kazandı. 25 Aralık Perşembe günü gerçekleştirilen çekilişte kazanan kup...",
@@ -6000,6 +6154,20 @@
     "date": "26.12.2025",
     "time": "17:33",
     "rawDate": "2025-12-26T14:33:35.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/saglik/2025/12/26/uzmanlar-yilbasi-sofralari-dusman-degil-keyif-alani-olmali",
+    "title": "Uzmanlar: Yılbaşı sofraları düşman değil, keyif alanı olmalı",
+    "summary": "Detoks diyetleri ve suçluluk duygusu birçok insan için yeni yıl sezonuna damgasını vuruyor. Uzmanlar, sorunun bugünlerde ne yediğiniz değil, diyet kül...",
+    "content": "Detoks diyetleri ve suçluluk duygusu birçok insan için yeni yıl sezonuna damgasını vuruyor. Uzmanlar, sorunun bugünlerde ne yediğiniz değil, diyet kültürü ve yiyeceklerle olan ilişkinize zarar veren kısıtlama döngüsü olduğu konusunda uyarıyor.",
+    "link": "http://tr.euronews.com/saglik/2025/12/26/uzmanlar-yilbasi-sofralari-dusman-degil-keyif-alani-olmali",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:33",
+    "rawDate": "2025-12-26T14:33:11.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -6130,6 +6298,34 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/kultur/2025/12/26/sia-mariah-careyyi-geride-birakti-snowman-spotifyin-yeni-noel-birincisi",
+    "title": "Sia, Mariah Carey’yi geride bıraktı: 'Snowman' Spotify’ın yeni Noel birincisi",
+    "summary": "Noel’in kraliçesi Mariah Carey tacını popun prensesi Sia’ya kaptırdı.\n30 yıl boyunca sezonun en popüler şarkısı olan 'All I Want for Christmas,' yerin...",
+    "content": "Noel’in kraliçesi Mariah Carey tacını popun prensesi Sia’ya kaptırdı.\n30 yıl boyunca sezonun en popüler şarkısı olan 'All I Want for Christmas,' yerini bu yıl Sia’nın 'Snowman’ine bıraktı.",
+    "link": "http://tr.euronews.com/kultur/2025/12/26/sia-mariah-careyyi-geride-birakti-snowman-spotifyin-yeni-noel-birincisi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:03",
+    "rawDate": "2025-12-26T14:03:39.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/2025/12/26/cinde-100-bin-hamile-kadinin-kan-ornegini-kaciran-cete-cokertildi",
+    "title": "Çin'de 100 bin hamile kadının kan örneğini kaçıran çete çökertildi",
+    "summary": "Çin'de 23 eyaleti kapsayan operasyonda, 100 binden fazla kan örneğinin kaçırıldığı ve milyonlarca dolar haksız kazanç elde edildiği belirlendi....",
+    "content": "Çin'de 23 eyaleti kapsayan operasyonda, 100 binden fazla kan örneğinin kaçırıldığı ve milyonlarca dolar haksız kazanç elde edildiği belirlendi.",
+    "link": "http://tr.euronews.com/2025/12/26/cinde-100-bin-hamile-kadinin-kan-ornegini-kaciran-cete-cokertildi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:02",
+    "rawDate": "2025-12-26T14:02:25.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://shiftdelete.net/?p=1212169",
     "title": "640 bin TL’ye Fiat Egea alınabilecek mi? – 5 Çayı #248",
     "summary": "5 Çayı programının 248. bölümünde teknoloji dünyasındaki en güncel gelişmeleri ve haftanın öne çıkan haberlerini derinlemesine ele alıyoruz. Bu hafta ...",
@@ -6168,6 +6364,34 @@
     "date": "26.12.2025",
     "time": "17:00",
     "rawDate": "2025-12-26T14:00:00.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/2025/12/26/kaliforniyadaki-firtina-etkisini-azaltsa-da-sel-ve-cig-riski-devam-ediyor",
+    "title": "Kaliforniya’daki fırtına etkisini azaltsa da sel ve çığ riski devam ediyor",
+    "summary": "Güçlü hava sistemi, Los Angeles’a son 54 yılın en yağışlı Noel’ini yaşatırken iki kişinin hayatını kaybetmesine neden oldu ve dağlık bölgelerde tahliy...",
+    "content": "Güçlü hava sistemi, Los Angeles’a son 54 yılın en yağışlı Noel’ini yaşatırken iki kişinin hayatını kaybetmesine neden oldu ve dağlık bölgelerde tahliye uyarılarını beraberinde getirdi.",
+    "link": "http://tr.euronews.com/2025/12/26/kaliforniyadaki-firtina-etkisini-azaltsa-da-sel-ve-cig-riski-devam-ediyor",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:00",
+    "rawDate": "2025-12-26T14:00:48.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/2025/12/26/doha-forumu-2025-dunya-liderlerinden-diyalogdan-eyleme-gecis-cagrisi",
+    "title": "Doha Forumu 2025: Dünya Liderlerinden Diyalogdan Eyleme Geçiş Çağrısı",
+    "summary": "Doha Forumu 2025, artan küresel gerilimleri ele almak, AB-KİK ilişkilerini derinleştirmek ve Suriye’nin geçiş sürecini desteklemek için dünya liderler...",
+    "content": "Doha Forumu 2025, artan küresel gerilimleri ele almak, AB-KİK ilişkilerini derinleştirmek ve Suriye’nin geçiş sürecini desteklemek için dünya liderlerini bir araya getirdi. Katar’ın arabuluculuk rolünün ön planda olduğu Forumda, diyalogdan somut sonuçlara geçilmesinin önemi vurgulandı.",
+    "link": "http://tr.euronews.com/2025/12/26/doha-forumu-2025-dunya-liderlerinden-diyalogdan-eyleme-gecis-cagrisi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "17:00",
+    "rawDate": "2025-12-26T14:00:35.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -6279,6 +6503,34 @@
     "date": "26.12.2025",
     "time": "16:41",
     "rawDate": "2025-12-26T13:41:38.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/video/2025/12/26/japonyada-bir-fabrikada-bicakli-ve-kimyasal-saldirida-bir-duzineden-fazla-kisi-yaralandi",
+    "title": "Japonya'da bir fabrikada bıçaklı ve kimyasal saldırıda bir düzineden fazla kişi yaralandı",
+    "summary": "Japonya'da Yokohama Rubber Company'deki saldırının ardından bir kişi gözaltına alındı; 8 kişi bıçaklandı, bazıları da çamaşır suyu olduğu sanılan bir ...",
+    "content": "Japonya'da Yokohama Rubber Company'deki saldırının ardından bir kişi gözaltına alındı; 8 kişi bıçaklandı, bazıları da çamaşır suyu olduğu sanılan bir kimyasalla yaralandı.",
+    "link": "http://tr.euronews.com/video/2025/12/26/japonyada-bir-fabrikada-bicakli-ve-kimyasal-saldirida-bir-duzineden-fazla-kisi-yaralandi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "16:38",
+    "rawDate": "2025-12-26T13:38:12.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/business/2025/12/26/fiatin-kurucu-ailesinden-maria-sole-agnelli-hayatini-kaybetti",
+    "title": "Fiat’ın kurucu ailesinden Maria Sole Agnelli hayatını kaybetti",
+    "summary": "Maria Sole Agnelli, İtalya’daki binicilik dünyasında da önemli bir figürdü....",
+    "content": "Maria Sole Agnelli, İtalya’daki binicilik dünyasında da önemli bir figürdü.",
+    "link": "http://tr.euronews.com/business/2025/12/26/fiatin-kurucu-ailesinden-maria-sole-agnelli-hayatini-kaybetti",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "16:31",
+    "rawDate": "2025-12-26T13:31:58.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -6395,6 +6647,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/saglik/2025/12/26/kanser-tedavisinde-kurbaga-mucizesi-tumorleri-yok-edebilen-bakteri-kesfedildi",
+    "title": "Kanser tedavisinde kurbağa mucizesi: Tümörleri yok edebilen bakteri keşfedildi",
+    "summary": "Yapılan deneylerde, kurbağadan alınan özel bir bakteri türünün farelerdeki tümörleri hiçbir ciddi yan etki göstermeden tamamen yok ettiği gözlemlendi....",
+    "content": "Yapılan deneylerde, kurbağadan alınan özel bir bakteri türünün farelerdeki tümörleri hiçbir ciddi yan etki göstermeden tamamen yok ettiği gözlemlendi.",
+    "link": "http://tr.euronews.com/saglik/2025/12/26/kanser-tedavisinde-kurbaga-mucizesi-tumorleri-yok-edebilen-bakteri-kesfedildi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "16:07",
+    "rawDate": "2025-12-26T13:07:36.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.webtekno.com/bazi-samsung-calisanlari-cin-casusu-cikti-h209770.html",
     "title": "\n                         Bazı Samsung Çalışanlarının Çin'in Casusu Olduğu Ortaya Çıktı: Kaybın Miktarı Dudak Uçuklattı! \n                    ",
     "summary": "Güney Kore'nin Samsung'a yönelik bir casusluk olayını incelediği dava sonuçlandı. Dava kapsamında bir grup Samsung çalışanının, bundan yıllar önce Çin...",
@@ -6447,6 +6713,20 @@
     "date": "26.12.2025",
     "time": "16:02",
     "rawDate": "2025-12-26T13:02:40.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
+    "id": "http://tr.euronews.com/2025/12/26/kuzey-kore-lideri-fuze-uretimini-artirma-talimati-verdi",
+    "title": "Kuzey Kore lideri, füze üretimini artırma talimatı verdi",
+    "summary": "Kuzey Kore lideri Kim Jong-un'un talimatından bir gün önce Pyongyang, büyük ölçüde tamamlanmış görünen nükleer bir denizaltının fotoğraflarını yayımla...",
+    "content": "Kuzey Kore lideri Kim Jong-un'un talimatından bir gün önce Pyongyang, büyük ölçüde tamamlanmış görünen nükleer bir denizaltının fotoğraflarını yayımladı.",
+    "link": "http://tr.euronews.com/2025/12/26/kuzey-kore-lideri-fuze-uretimini-artirma-talimati-verdi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "16:02",
+    "rawDate": "2025-12-26T13:02:28.000Z",
     "isHeadline": false,
     "isBreaking": false
   },
@@ -6633,6 +6913,20 @@
     "isBreaking": false
   },
   {
+    "id": "http://tr.euronews.com/2025/12/26/cin-tayvana-silah-satisina-karsi-20-abdli-sirketi-kara-listeye-aldi",
+    "title": "Çin, Tayvan’a silah satışına karşı 20 ABD'li şirketi kara listeye aldı",
+    "summary": "Yaptırımlar, Washington’ın Tayvan’a 10 milyar doları aşan silah satış paketini duyurmasından yaklaşık bir hafta sonra yürürlüğe girdi....",
+    "content": "Yaptırımlar, Washington’ın Tayvan’a 10 milyar doları aşan silah satış paketini duyurmasından yaklaşık bir hafta sonra yürürlüğe girdi.",
+    "link": "http://tr.euronews.com/2025/12/26/cin-tayvana-silah-satisina-karsi-20-abdli-sirketi-kara-listeye-aldi",
+    "category": "World",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    "date": "26.12.2025",
+    "time": "15:44",
+    "rawDate": "2025-12-26T12:44:54.000Z",
+    "isHeadline": false,
+    "isBreaking": false
+  },
+  {
     "id": "https://www.haberturk.com/3-aylik-bebegini-4-kattan-atmisti-dram-icinde-dram-son-dakika-haber-3848653",
     "title": "3 aylık bebeğini 4. kattan atmıştı... Dram içinde dram!",
     "summary": "Diyarbakır’da, psikolojik sorunları olduğu belirtilen ve 3 aylık bebeği H.E. isimli kız çocuğunu misafirliğe gittiği kayınpederinin 4. kattaki evinde ...",
@@ -6671,299 +6965,6 @@
     "date": "26.12.2025",
     "time": "15:41",
     "rawDate": "2025-12-26T12:41:36.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "7510013",
-    "title": "Müzisyen Jan Garbarek İstanbul'a geliyor!",
-    "summary": "Sanatçı, usta müzisyenler Rainer Brüninghaus, Yuri Daniel ve Trilok Gurtu ile birlikte 4 Aralık 2026'da Zorlu Performans Sanatları Merkezi'nde konser ...",
-    "content": "<img src=\"https://image.milimaj.com/i/milliyet/75/460x340/694e7c42c76a96066a6830fe.jpg\"/><p>Sanatçı, usta müzisyenler Rainer Brüninghaus, Yuri Daniel ve Trilok Gurtu ile birlikte 4 Aralık 2026'da Zorlu Performans Sanatları Merkezi'nde konser verecek.</p>\n<p>Stagepass organizasyonuyla düzenlenen konserin biletleri, 25 Aralık saat 11.00'de satışta olacak.</p>\n<p>Avrupa cazının özgün isimleri arasında gösterilen<mark>Garbarek</mark>, İskandinav folk müziğini caz ve dünya müziği unsurlarıyla buluşturan kendine özgü tarzıyla tanınıyor.</p>\n<p>Özellikle ECM Records etiketiyle yayımladığı albümlerle uluslararası ün kazanan sanatçı, Keith Jarrett, Pat Metheny ve Hilliard Ensemble gibi önemli isim ve topluluklarla yaptığı işbirlikleriyle de caz tarihinde kalıcı bir yer edindi.</p>\n<p><img src=\"https://image.milimaj.com/i/milliyet/75/770x0/694e7bb1c76a96066a6830fb.jpg\" width=\"100%\"/></p>\n<section class=\"insert insert-contents mceNonEditable\" data-contents=\"%5B%7B%22_Id%22%3A%22694e65c8c76a96066a683064%22%2C%22Title%22%3A%22%DCnl%FC%20YouTuber%27dan%20ac%u0131%20haber%21%20Evinde%20%F6l%FC%20bulundu%22%2C%22Description%22%3A%22D%FCnyaca%20%FCnl%FC%20YouTube%20vlogger%20Adam%20the%20Woo%2C%20Florida%u2019daki%20evinde%20%F6l%FC%20bulundu.%2051%20ya%u015F%u0131nda%20hayata%20veda%20eden%20Williams%u2019%u0131n%20%F6l%FCm%20nedeni%20halen%20ara%u015Ft%u0131r%u0131l%u0131yor.%22%2C%22Url%22%3A%22/magazin/unlu-youtuberdan-aci-haber-evinde-olu-bulundu-7509930%22%2C%22ContentType%22%3A%22Article%22%2C%22ModifiedDate%22%3A%222025-12-26T12%3A01%3A46.114Z%22%2C%22FileIds%22%3A%5B%22694e6755c76a96066a683079%22%5D%7D%5D\" data-files=\"%5B%7B%22FileName%22%3A%22E434343.jpg%22%2C%22ContentType%22%3A%22image/jpeg%22%2C%22ModifiedDate%22%3A%222025-12-26T10%3A45%3A41.685Z%22%2C%22Length%22%3A0%2C%22ChunkSize%22%3A0%2C%22Metadata%22%3A%7B%22Title%22%3A%22%22%2C%22Description%22%3A%22%22%2C%22EmbedCode%22%3A%22%22%2C%22Tags%22%3A%5B%5D%2C%22ContentTags%22%3A%5B%5D%2C%22Sources%22%3A%5B%5D%2C%22Credit%22%3A%22%22%2C%22FileShowRelatedNews%22%3Afalse%2C%22Grade%22%3A%22%22%2C%22SponsorLogo%22%3A%22%22%2C%22SponsorText%22%3A%22%22%2C%22BtnText%22%3A%22%22%2C%22BtnRedirectUrl%22%3A%22%22%7D%2C%22_Id%22%3A%22694e6755c76a96066a683079%22%2C%22id%22%3A%22694e6755c76a96066a683079%22%2C%22Application%22%3A%22com.milliyet%22%7D%5D\" data-properties=\"%7B%22Type%22%3A%22RecommendedNewsHorizontalCard%22%2C%22Theme%22%3A%22purple%22%2C%22BoxTitle%22%3A%22%22%2C%22ButtonText%22%3A%22Haberi%20G%F6r%FCnt%FCle%22%2C%22SelectTarget%22%3A%22_self%22%7D\" data-type=\"Content\">Ünlü YouTuber'dan acı haber! Evinde ölü bulundu</section>",
-    "category": "Magazine",
-    "imageUrl": "https://image.milimaj.com/i/milliyet/75/460x340/694e7c42c76a96066a6830fe.jpg",
-    "date": "26.12.2025",
-    "time": "15:41",
-    "rawDate": "2025-12-26T12:41:37.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.bloomberght.com/rekabet-ten-18-fide-sirketine-sorusturma-3764859",
-    "title": "Rekabet'ten 18 fide şirketine soruşturma",
-    "summary": "Rekabet Kurulu, dikim için sebze fidesi sektöründe faaliyet gösteren 18 teşebbüs ve Fide Üreticileri Alt Birliği hakkında soruşturma başlattı....",
-    "content": "Rekabet Kurulu, dikim için sebze fidesi sektöründe faaliyet gösteren 18 teşebbüs ve Fide Üreticileri Alt Birliği hakkında soruşturma başlattı.",
-    "link": "https://www.bloomberght.com/rekabet-ten-18-fide-sirketine-sorusturma-3764859",
-    "category": "Economy",
-    "imageUrl": "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:39",
-    "rawDate": "2025-12-26T12:39:56.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.haberturk.com/anestezi-sonrasi-dram-biri-oldu-digeri-yatalak-3848662",
-    "title": "Anestezi sonrası dram! Biri öldü diğeri yatalak",
-    "summary": "Anestezi sonrası kalbi duran iki hastadan biri yaşamını yitirirken, diğeri ağır beyin hasarıyla yatalak oldu. Aileler ihmaller zinciri iddiasıyla suç ...",
-    "content": "Anestezi sonrası kalbi duran iki hastadan biri yaşamını yitirirken, diğeri ağır beyin hasarıyla yatalak oldu. Aileler ihmaller zinciri iddiasıyla suç duyurusunda bulundu",
-    "link": "https://www.haberturk.com/anestezi-sonrasi-dram-biri-oldu-digeri-yatalak-3848662",
-    "category": "General",
-    "imageUrl": "https://im.haberturk.com/l/2025/12/26/ver1766752678/3848662/jpg/1280x1280",
-    "date": "26.12.2025",
-    "time": "15:38",
-    "rawDate": "2025-12-26T12:38:28.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.donanimhaber.com/rusya-10-yil-icinde-ay-a-nukleer-santral-kurmayi-planliyor--200158",
-    "title": "Rusya, 10 yıl içinde Ay'a nükleer santral kurmayı planlıyor",
-    "summary": "Rusya, Ay’daki uzun gecelerde enerji sağlamak için önümüzdeki 10 yıl içinde nükleer güç santrali kurmayı planlıyor. Tesis, Rusya-Çin ortak Ay üssüne e...",
-    "content": "<img src=\"https://www.donanimhaber.com/images/images/haber/200158/1400x788rusya-10-yil-icinde-ay-a-nukleer-santral-kurmayi-planliyor.jpg\" />Rusya, Ay’daki uzun gecelerde enerji sağlamak için önümüzdeki 10 yıl içinde nükleer güç santrali kurmayı planlıyor. Tesis, Rusya-Çin ortak Ay üssüne enerji verecek.",
-    "link": "https://www.donanimhaber.com/rusya-10-yil-icinde-ay-a-nukleer-santral-kurmayi-planliyor--200158",
-    "category": "Technology",
-    "imageUrl": "https://www.donanimhaber.com/images/images/haber/200158/1400x788rusya-10-yil-icinde-ay-a-nukleer-santral-kurmayi-planliyor.jpg",
-    "date": "26.12.2025",
-    "time": "15:37",
-    "rawDate": "2025-12-26T12:37:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://shiftdelete.net/?p=1212159",
-    "title": "Realme 16 Pro Özellikleri Belli Oldu: İşte Canavar!",
-    "summary": "Realme, merakla beklenen yeni akıllı telefonu 16 Pro serisini 6 Ocak’ta Hindistan’da tanıtacağını duyurdu. Lansman öncesinde, Realme 16 Pro özellikler...",
-    "content": "Realme, merakla beklenen yeni akıllı telefonu 16 Pro serisini 6 Ocak&#8217;ta Hindistan&#8217;da tanıtacağını duyurdu. Lansman öncesinde, Realme 16 Pro özellikleri hakkında önemli bilgiler paylaşılarak heyecan artırıldı. Cihaz, özellikle kamera ve batarya performansıyla dikkat çekiyor. İşte Merakla Beklenen Realme 16 Pro Özellikleri Realme tarafından yapılan onaylamaya göre, 16 Pro modeli gücünü MediaTek Dimensity 7300-Max 5G yonga [&#8230;]",
-    "link": "https://shiftdelete.net/realme-16-pro-ozellikleri-belli-oldu-iste-canavar",
-    "category": "Technology",
-    "imageUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:36",
-    "rawDate": "2025-12-26T12:36:37.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.bloomberght.com/cin-abd-li-20-sirkete-yaptirim-uygulayacak-3764860",
-    "title": "Çin, ABD'li 20 şirkete yaptırım uygulayacak",
-    "summary": "Çin, egemenlik ihtilafı yaşadığı Tayvan'a ABD'nin yaklaşık 11 milyar dolarlık silah satışına onay vermesinin ardından, bu satış kapsamındaki silah ve ...",
-    "content": "Çin, egemenlik ihtilafı yaşadığı Tayvan'a ABD'nin yaklaşık 11 milyar dolarlık silah satışına onay vermesinin ardından, bu satış kapsamındaki silah ve donanımları üreten 20 Amerikan savunma sanayi şirketi ile 10 yöneticiye yaptırım uygulayacağını bildirdi.",
-    "link": "https://www.bloomberght.com/cin-abd-li-20-sirkete-yaptirim-uygulayacak-3764860",
-    "category": "Economy",
-    "imageUrl": "https://images.unsplash.com/photo-1529243856184-fd5465488984?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:31",
-    "rawDate": "2025-12-26T12:31:38.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.ekonomist.com.tr/turizm/dof-robotics-ten-kapadokya-ya-20-milyon-dolarlik-yatirim-69311",
-    "title": "DOF Robotics’ten Kapadokya’ya 20 milyon dolarlık yatırım",
-    "summary": "DOF Robotics, Kapadokya’ya NeoCappadocia projesi ile 20 milyon dolarlık yatırım yapıyor....",
-    "content": "<p><strong>DOF Robotics Kapadokya’ya 20 milyon dolarlık dev bir yatırım için harekete geçti. Şirket, NeoCappadocia ile turizm merkezine yeni nesil ve deneyim odaklı bir eğlence projesi kazandıracak.</strong><br><br>Avanos’ta 5.000 m² kapalı alanda kurulacak olan NeoCappadocia, ileri teknoloji, canlı performans ve tematik misafirperverliği tek bir çatı altında buluşturmayı hedefliyor. NeoCappadocia bünyesinde Fly Over Cappadocia / Türkiye temalı flying theatre, balon simülatörü, tamamen tematik bir restoran, konsept odalardan oluşan butik temalı otel ile teknoloji, estetik ve hikaye anlatımının birleştiği canlı show deneyimleri yer alacak. Yılın 12 ayı boyunca hizmet verecek şekilde tasarlanan NeoCappadocia, bölge turizmine sürdürülebilir bir ivme kazandırmayı ve Türkiye’yi deneyim, teknoloji ve inovasyon turizminin küresel merkezlerinden biri haline getirmeyi amaçlıyor.<br><br><strong>Yıllık 500 binin üzerinde misafir hedefleniyor</strong><br><br>Yatırıma ilişkin değerlendirmede bulunan DOF Robotics Yönetim Kurulu Başkanı Mustafa Mertcan, “Kapadokya’yı eşsiz doğal mirasının ötesinde teknoloji, hikaye anlatımı ve duygusal deneyimin iç içe geçtiği, yeni bir deneyim evreni olarak konumlandırıyoruz. Doğa ve kültür turizmi tutkunlarının listesinde her zaman üst sıralarda yer alan Kapadokya’ya, NeoCappadocia ile yeni ve güçlü bir ziyaret nedeni ekliyoruz. Faaliyete geçmesiyle birlikte yıllık 500 binin üzerinde ziyaretçiyi ağırlayarak Kapadokya’nın çekim gücünü dört mevsime yaymayı hedefliyoruz. Deneyim turizmi alanında dünyada türünün ilk örneklerinden biri olan NeoCappadocia, Türkiye’nin yaratıcı teknoloji gücünü küresel sahneye taşıyan stratejik bir proje olarak da önem taşıyor” dedi.<br><br><strong>“Türkiye’yi yüksek teknoloji deneyim ülkesi olarak konumlandıracağız”</strong><br><br>Kapadokya’da hayata geçirilecek projenin benzerlerinin İstanbul nbsp;ve Antalya’da da hayata geçirilmesinin hedeflendiğini belirten Mustafa Mertcan, “Güçlü mühendislik altyapımız, Ar-Ge odaklı büyüme vizyonumuz ve küresel bakış açımızla, Türkiye’nin turizm destinasyonu olmasının yanı sıra yüksek teknoloji üreten ve ihraç eden bir deneyim ülkesi olarak konumlanmasına katkı sağlıyoruz. Bu projeler ile Türk mühendisliğinin, yaratıcılığının ve inovasyon kabiliyetinin dünya sahnesindeki marka değerini kalıcı biçimde yükseltmeyi hedefliyoruz” diye konuştu.<br>nbsp;</p>",
-    "link": "https://www.ekonomist.com.tr/turizm/dof-robotics-ten-kapadokya-ya-20-milyon-dolarlik-yatirim-69311",
-    "category": "Economy",
-    "imageUrl": "https://cdn.ekonomist.com.tr/ekonomist/ekonomist-image-111--59250a768c074e.jpg",
-    "date": "26.12.2025",
-    "time": "15:31",
-    "rawDate": "2025-12-26T12:31:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://shiftdelete.net/?p=1212153",
-    "title": "Exynos 2600 AMD GPU ile Geliyor!",
-    "summary": "Samsung’un 2026 yılı amiral gemisi telefonlarına güç vermesi beklenen Exynos 2600 AMD GPU teknolojisiyle ilgili ilk detaylar ortaya çıktı. Yeni yonga ...",
-    "content": "Samsung&#8217;un 2026 yılı amiral gemisi telefonlarına güç vermesi beklenen Exynos 2600 AMD GPU teknolojisiyle ilgili ilk detaylar ortaya çıktı. Yeni yonga seti, mobil oyun ve grafik performansında devrim yaratmayı hedefleyen AMD&#8217;nin en yeni RDNA4 mimarisini kullanacak. Bu gelişme, Samsung&#8217;un işlemci stratejisinde önemli bir adımı temsil ediyor. Exynos 2600 AMD GPU Mimarisi: RDNA4 Farkı Gelen bilgilere [&#8230;]",
-    "link": "https://shiftdelete.net/exynos-2600-amd-gpu-ile-geliyor",
-    "category": "Technology",
-    "imageUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:30",
-    "rawDate": "2025-12-26T12:30:03.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.technopat.net/?p=467948",
-    "title": "Samsung, ucuza kaçmak için Çin malı ekran kullanabilir!",
-    "summary": "Samsung’un amiral gemisi Galaxy S serisinde kullandığı OLED panellerle ilgili dikkat çekici bir iddia gündeme geldi. Paylaşılan yeni bir rapora göre ş...",
-    "content": "<img width=\"1280\" height=\"720\" src=\"https://www.technopat.net/wp-content/uploads/2025/12/samsung-10.webp\" class=\"attachment-large size-large wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://www.technopat.net/wp-content/uploads/2025/12/samsung-10.webp 1280w, https://www.technopat.net/wp-content/uploads/2025/12/samsung-10-640x360.webp 640w, https://www.technopat.net/wp-content/uploads/2025/12/samsung-10-750x422.webp 750w, https://www.technopat.net/wp-content/uploads/2025/12/samsung-10-1140x641.webp 1140w\" sizes=\"(max-width: 1280px) 100vw, 1280px\" /><p>Samsung&#8217;un amiral gemisi Galaxy S serisinde kulland&#305;&#287;&#305; OLED panellerle ilgili dikkat &#231;ekici bir iddia g&#252;ndeme geldi. Payla&#351;&#305;lan yeni bir rapora g&#246;re &#351;irket gelecekte &#252;st seviye modellerinde &#199;inli panel &#252;reticisi BOE taraf&#305;ndan &#252;retilen OLED ekranlar&#305; kullanmay&#305; de&#287;erlendiriyor. Hen&#252;z kesinle&#351;mi&#351; bir karar bulunmasa da taraflar aras&#305;nda bu y&#246;nde temas kuruldu&#287;u belirtiliyor.Samsung Display ve BOE aras&#305;nda temas ger&#231;ekle&#351;tiRaporda [&#8230;]</p>\n<p>Devamı: <a href=\"https://www.technopat.net/2025/12/26/samsung-display-boe-arasinda-temas/\">Samsung, ucuza kaçmak için Çin malı ekran kullanabilir!</a><br />\nKaynak <a href=\"https://www.technopat.net\">Technopat</a></p>\n",
-    "link": "https://www.technopat.net/2025/12/26/samsung-display-boe-arasinda-temas/",
-    "category": "Technology",
-    "imageUrl": "https://www.technopat.net/wp-content/uploads/2025/12/samsung-10.webp",
-    "date": "26.12.2025",
-    "time": "15:30",
-    "rawDate": "2025-12-26T12:30:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.ekonomist.com.tr/sirketler/bircok-farkli-bolgede-yeni-yatirim-firsatlarini-degerlendiriyoruz-69307",
-    "title": "\"Birçok farklı bölgede yeni yatırım fırsatlarını değerlendiriyoruz\"",
-    "summary": "Karadeniz Holding Yönetim Kurulu Başkan Yardımcısı Zeynep Harezi Yılmaz, gelecek 5 yılda şirketin kurulu gücünü yaklaşık 2,5 kat artırmayı hedefledikl...",
-    "content": "<p><strong>Karadeniz Holding Yönetim Kurulu Başkan Yardımcısı Zeynep Harezi Yılmaz, 2025'in şirket açısından operasyonel gücün pekiştirildiği, hızlı büyüme ivmesinin sürdürüldüğü bir dönem olduğunu belirterek, gelecek 5 yılda şirketin kurulu gücünü yaklaşık 2,5 kat artırmayı hedeflediklerini söyledi.</strong></p><p>Yılmaz, dünyanın en büyük yüzer elektrik santrali filosuna sahip Karadeniz Holding'in 2025 performansı, küresel enerji piyasalarındaki gelişmeler ve gelecek yıla ilişkin hedeflerini AA muhabirine değerlendirdi.</p><p>Holding için 2025'in güçlü bir büyüme yılı olduğunu vurgulayan Yılmaz, Orta Doğu'dan Afrika'ya, Asya'dan Amerika'ya uzanan geniş bir coğrafyada 20'yi aşkın ülkede faaliyet gösterdiklerini söyledi.</p><p>Yılmaz, 30 farklı milletten 3 bin kişilik bir çalışan kadrosuna sahip olduklarını belirterek, \"Bu sayının yarısından fazlası yurt dışında görev yapıyor. 45 powershipten oluşan filomuz ve 8 bin megavatı aşan toplam kurulu gücümüzle dört kıtada faaliyet gösteren küresel bir enerji grubuyuz ve dünya nüfusunun yaklaşık yüzde birine elektriği biz sağlıyoruz.\" dedi.</p><p><strong>- Irak, Dominik Cumhuriyeti ve Senegal'de yeni adımlar</strong></p><p>Devam eden projelere ilave olarak yeni ülke ve sözleşmelerle büyüme ivmesini artırmaya devam ettiklerini kaydeden Yılmaz, şirketin yurt dışı faaliyetlerine ilişkin şu bilgileri paylaştı:</p><p>\"Irak'ta 590 megavat kapasiteli bir projeyi devreye aldık. Dominik Cumhuriyeti'nde de yeni bir kontrat imzalayarak ülkedeki kapasitemizi iki kattan fazla artışla 408 megavata çıkardık. Senegal'de, LNG terminal gemilerimizden biri aracılığıyla operasyonlarımızı sıvı yakıttan doğal gaza geçirdik ve Senegal'in büyük karar santrallerinden biri olan Bel-Air santralinin de doğal gaza geçmesi için gerekli teknik ve altyapı çalışmalarını tamamladık. Senegal bu sayede, Afrika'nın ilk LNG-to-Power projesini hayata geçiren ülke oldu.\"</p><p>Yılmaz, 2025'te filoyu güçlendirmeye ve kapasiteyi artırmaya yönelik stratejik yatırımlara hız verdiklerini vurgulayarak, yıl boyunca yüzer enerji santralleri, sıvılaştırılmış doğal gaz LNG terminal gemileri, yeni nesil enerji teknolojileri, tersane altyapısı ve dijitalleşme alanlarına odaklanan yatırımlar gerçekleştirdiklerini söyledi.</p><p>Artan küresel enerji talebi ve arz güvenliği ihtiyacının, yüzer enerji çözümlerine olan ilgiyi artırdığını dile getiren Yılmaz, bu alandaki tecrübe ve ölçek sayesinde talebi karşılayabilecek güçlü bir pozisyonda olduklarını ifade etti.</p><p><strong>- \"Küresel enerji talebi önümüzdeki 10 yılda iki katına çıkabilir\"</strong></p><p>Yılmaz, küresel enerji sektörü açısından 2025'in arz güvenliği, enerji dönüşümü, karbon yönetimi ve maliyet dengesi başlıklarının aynı anda yönetildiği oldukça hareketli bir yıl olduğuna dikkati çekerek, şunları kaydetti:</p><p>\"Jeopolitik gelişmeler, iklim değişikliğiyle mücadele çalışmaları ve artan elektrik talebi, hızlı devreye alınabilen, ölçeklenebilir, istikrarlı ve temiz enerji çözümlerine olan ihtiyacı daha da artırıyor. Bugün dünyada hala yaklaşık 760 milyon insan en temel ihtiyaçlardan biri olan elektriğe düzenli erişim sağlayamazken, gelişmiş ülkelerde ise veri merkezleri ve yapay zeka uygulamalarının tetiklediği olağanüstü bir enerji talebi ortaya çıkıyor. Biz, her iki ihtiyaca da yenilikçi çözümler üretebilmek için çalışıyoruz.\"</p><p>Küresel enerji talebinin gelecek 10 yıl içinde iki katına çıkmasının beklendiğini, buna karşılık üretim gücünün bu hıza yetişmekte zorlandığını vurgulayan Yılmaz, \"Bu talebin sadece yenilenebilir enerji ile karşılanması günümüzde maalesef henüz mümkün değil. Bu nedenle termik elektriklerin en temizi olan doğal gaz ile çalışan powershiplerimize ve LNG terminal gemilerimize talebin daha da artacağını düşünüyoruz.\" dedi.</p><p>Yılmaz, 2025'te odaklarını, kapasite artışının yanı sıra teknolojik dönüşüm, operasyonel verimlilik ve sürdürülebilirliğe de yönelttiklerini dile getirerek, filoda daha yüksek verimlilik sağlayan motorlarla karbon yakalama ve depolama gibi çevre dostu teknolojilere ciddi yatırımlar yaptıklarını söyledi.</p><p>Bu yıl ayrıca yapay zeka ve veri merkezlerinin artan elektrik ihtiyacına çözüm olarak Japon MOL ile dünyanın ilk entegre yüzer veri merkezi platformunu geliştirmek üzere çalışmalara başladıklarını dile getiren Yılmaz, mobil enerji üretimini yüzer veri altyapısıyla birleştiren sistemlerle daha hızlı, temiz ve esnek çözümler sunmayı hedeflediklerini kaydetti.</p><p><strong>- \"Birçok farklı bölgede yeni yatırım fırsatlarını değerlendiriyoruz\"</strong></p><p>Yılmaz, önceliklerinin küresel ölçekte dengeli büyümeyi sürdürürken teknoloji, verimlilik ve sürdürülebilirlik odağını güçlendirmek olduğunu vurgulayarak, şirketin 2026'ya ilişkin planlarını şöyle anlattı:</p><p>\"Önümüzdeki dönemde de faaliyet gösterdiğimiz alanlarda uzun vadeli değer üretmeye, güçlü operasyonel yapımızı koruyarak istikrarlı büyüme trendimizi sürdürmeye odaklanacağız. Yüzer enerji çözümlerinin, özellikle enerji ihtiyacının hızla arttığı gelişmekte olan ve gelişmiş pazarlarda esnek ve hızlı bir alternatif olarak önemini koruyacağını öngörüyoruz.</p><p>Önümüzdeki 5 sene içinde filomuza yapacağımız yeni yatırımlarla mevcut 8 gigavatlık kurulu gücümüzü yaklaşık 2,5 kat artırmayı hedefliyoruz. Coğrafi açıdan bakıldığında farklı kıtalarda mevcut işbirliklerimizi güçlendirmeyi ve yeni fırsatları seçici bir yaklaşımla değerlendirmeyi planlıyoruz. Başta Orta Doğu, Amerika ve Asya-Pasifik olmak üzere birçok farklı bölgede yeni yatırım fırsatlarını değerlendiriyoruz.\"</p>",
-    "link": "https://www.ekonomist.com.tr/sirketler/bircok-farkli-bolgede-yeni-yatirim-firsatlarini-degerlendiriyoruz-69307",
-    "category": "Economy",
-    "imageUrl": "https://cdn.ekonomist.com.tr/ekonomist/ekonomist-image-111--00f7ffb015fc40.jpg",
-    "date": "26.12.2025",
-    "time": "15:25",
-    "rawDate": "2025-12-26T12:25:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.haberturk.com/misir-dan-netanyahu-ya-suclama-bolgeyi-atese-vermeye-calisiyor-3848728",
-    "title": "Mısır'dan Netanyahu'ya suçlama: Bölgeyi ateşe vermeye çalışıyor",
-    "summary": "Mısır Cumhurbaşkanlığı Devlet Enformasyon Servisi Başkanı Raşvan, İsrail Başbakanı Netanyahu'nun Gazze'deki ateşkesin ikinci aşamasına geçilmesini eng...",
-    "content": "Mısır Cumhurbaşkanlığı Devlet Enformasyon Servisi Başkanı Raşvan, İsrail Başbakanı Netanyahu'nun Gazze'deki ateşkesin ikinci aşamasına geçilmesini engellemeye çalıştığını söyledi ve bölgeyi yeni bir çatışma sürecine sürüklemekle suçladı.",
-    "link": "https://www.haberturk.com/misir-dan-netanyahu-ya-suclama-bolgeyi-atese-vermeye-calisiyor-3848728",
-    "category": "General",
-    "imageUrl": "https://im.haberturk.com/l/2025/12/26/ver1766751828/3848728/jpg/1280x1280",
-    "date": "26.12.2025",
-    "time": "15:24",
-    "rawDate": "2025-12-26T12:24:10.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://haber.mynet.com/esenyurt-ta-gocuk-arabayi-yuttu-sahibinin-tepkisi-gundem-oldu-gomun-gitsin-110107261994",
-    "title": "Esenyurt'ta göçük arabayı yuttu! Sahibinin tepkisi gündem oldu: \"Gömün gitsin\"",
-    "summary": "İstanbul Esenyurt'ta kaydedilen görüntüler görenleri şaşkına çevirdi. Boş bir arazide göçüğe düşen otomobilin görüntülerinden ziyade sahibinin söyledi...",
-    "content": "İstanbul Esenyurt'ta kaydedilen görüntüler görenleri şaşkına çevirdi. Boş bir arazide göçüğe düşen otomobilin görüntülerinden ziyade sahibinin söyledikleri daha ilginç oldu. Araç sahibi Cevdet Turahan, \"Bu arabadan çok çektim. 2 kere motor yedi. Çekmediğim kalmadı. Her gün arabama vuruyorlardı. O yüzden böyle görünce üzülmedim, sevindim. Üstünü gömün gitsin\" dedi. Yaşanan anlar saniye saniye kameralara yansıdı.\n",
-    "link": "https://haber.mynet.com/esenyurt-ta-gocuk-arabayi-yuttu-sahibinin-tepkisi-gundem-oldu-gomun-gitsin-110107261994",
-    "category": "General",
-    "imageUrl": "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:22",
-    "rawDate": "2025-12-26T12:22:11.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.haberturk.com/izinsiz-kaziya-drone-ile-sucustu-3848726",
-    "title": "İzinsiz kazıya drone ile suçüstü!",
-    "summary": "İstanbul Büyükçekmece'de izinsiz kazı yapan 2 kişi, drone ile yapılan tespitle suçüstü yakalandı. O anların görüntüsü ortaya çıktı...",
-    "content": "İstanbul Büyükçekmece'de izinsiz kazı yapan 2 kişi, drone ile yapılan tespitle suçüstü yakalandı. O anların görüntüsü ortaya çıktı",
-    "link": "https://www.haberturk.com/izinsiz-kaziya-drone-ile-sucustu-3848726",
-    "category": "General",
-    "imageUrl": "https://im.haberturk.com/l/2025/12/26/ver1766751013/3848726/jpg/1280x1280",
-    "date": "26.12.2025",
-    "time": "15:21",
-    "rawDate": "2025-12-26T12:21:18.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.ekonomist.com.tr/enerji/dogal-gaz-tuketiminde-2025-hedefi-belirlendi-69310",
-    "title": "Doğal gaz tüketiminde 2025 hedefi belirlendi",
-    "summary": "Türkiye Doğal Gaz Dağıtıcıları Birliği (GAZBİR) Başkanı Yaşar Arslan, kış aylarında sıcaklığın mevsim normallerinin üzerinde seyretmesi ve elektrik ür...",
-    "content": "<p><strong>Türkiye Doğal Gaz Dağıtıcıları Birliği (GAZBİR) Başkanı Yaşar Arslan, Türkiye'nin 2025 doğal gaz üretimi, tüketimi ve altyapısındaki gelişmelere ilişkin AA muhabirine değerlendirmelerde bulundu.</strong></p><p>Türkiye'nin doğal gaz tüketiminin bu yıl ocak-kasımda, 2024'ün aynı dönemine göre yüzde 16 artarak 53 milyar metreküp olduğunu belirten Arslan, \"Yıl içinde kuraklığın tüm bölgelerde artması, özellikle yoğun kar örtüsünün oluşmaması ve yaz döneminin oldukça sıcak geçmesi nedeniyle elektrik arzının karşılanabilmesi amacıyla bu yıl doğal gaz ile elektrik üreten santrallerde talep arttı.\" diye konuştu.</p><p>Arslan, her yıl ortalama 1 milyon yeni abonenin doğal gaz kullanmaya başladığını, bunun da tüketimi 1 milyar metreküp yükselttiğini anlatarak, \"2025 toplam doğal gaz tüketiminin, 2024'e göre yaklaşık yüzde 15 artışla 60-61 milyar metreküp civarında olacağı görülüyor.\" ifadesini kullandı.</p><p><strong>- Sakarya Gaz Sahası'nın 2025 üretiminin 3 milyar metreküpe ulaşması bekleniyor</strong></p><p>Türkiye'nin yerli gaz kaynaklarının geliştiğine dikkati çeken Arslan, \"Sakarya Doğal Gaz Sahası'nda devam eden üretim çalışmaları, ülkemiz enerji sektörünün yüz akı projelerinden biri. Geldiğimiz aşamada, doğal gaz talebimizin tamamı olmasa da önceki yıllardaki üretim kapasitemize kıyasla oldukça yüksek bir miktarı karşılama imkanı sağlayan Sakarya Doğal Gaz Sahası'ndaki üretimin her geçen gün artmasını temenni ediyoruz.\" dedi.</p><p>Arslan, Sakarya Doğal Gaz Sahası'nda yılın ilk 3 çeyreklik döneminde üretimin 2 milyar metreküpü geçtiğini, son çeyrekte yaklaşık 1 milyar metreküp daha doğal gaz üretileceğini tahmin ettiklerini söyledi.</p><p>Sakarya Doğal Gaz Sahası Geliştirme Projesi gibi büyük ölçekli yatırımların, Türkiye'nin enerji arz güvenliği ve dışa bağımlılığını büyük ölçüde azaltacağını vurgulayan Arslan, açık kaynaklardaki ortalama doğal gaz ithalat fiyatları esas alındığında, 2025'te bu sahadan elde edilen doğal gazın ekonomik karşılığının 1 milyar dolar civarında olduğunu ifade etti.</p><p>Arslan, yerli doğal gaz üretiminin, Türkiye'nin dışa bağımlılığını azaltmasına, tedarik güvenliğini güçlendirmesine ve ithalatçı ülkelerle yapılan müzakerelerde daha uygun fiyatla esnek sözleşme imkanı sağlanmasına katkıda bulunduğunu belirtti.</p><figure class=\"image\"><img src=\"https://cdn.ekonomist.com.tr/ekonomist/ekonomist-image-111--14ae637f9c9745.jpg\"></figure><p><strong>- Türkiye artan talebi eksiksiz sağlayabilecek kapasitede</strong></p><p>Gelecek yıl doğal gaz talebini artırabilecek en önemli unsurun elektrik üretimi olacağını dile getiren Arslan, konut tüketiminin de abone sayısının artışına bağlı olarak yükselmesini beklediklerini bildirdi.</p><p>Arslan, 2026'ya yönelik negatif senaryoda gaz talebinin 55-56 milyar metreküp, nötr senaryoda 58-59 milyar metreküp, pozitif senaryoda ise 63-64 milyar metreküp civarında olacağını tahmin ettiklerini belirterek, şu ifadeleri kullandı:</p><p>\"Türkiye'nin doğal gaz altyapısı, yaklaşık 500 milyon metreküp civarı günlük giriş kapasitesi, 6 milyar metreküp üzerinde depolama kapasitesi, 80 milyar metreküpün üzerinde sözleşme kapasitesi ve Sakarya Gaz Sahası ile artan talebi eksiksiz karşılayabilecek kabiliyete ulaştı. Bu yüksek kapasite önümüzdeki yıllarda Türkiye’nin sadece kendi arz güvenliğini sağlamakla kalmayıp, aynı zamanda bölgesindeki komşu ülkelere ve Avrupa'ya gaz ihraç eden bir ülke olma vizyonunu desteklemektedir.\"</p><p>Türkiye'nin gaz dağıtım altyapındaki gelişmelere de değinen Arslan, \"2025 Aralık itibarıyla 973 ilçenin 828'ine doğal gaz ulaştırılmış ve 398 beldenin yüzde 35'inde doğal gaz arzı sağlanmıştır. 2025'te bugüne kadar 30 yeni yerleşim yerine doğal gaz arzı sağlanmıştır ve yıl sonuna kadar 25-30 yeni yerleşim yerine daha doğal gaz arzı sağlanması hedeflenmektedir.\" diye konuştu.</p><p>Arslan, gaz şebeke uzunluğunun 2025 sonu itibarıyla geçen yıla göre yüzde 7 artarak toplam 235 bin kilometreye ulaştığını, gelecek yıl için yüzde 6,5 büyüme hedefiyle 250 bin kilometreyi aşmasını öngördüklerini kaydetti.</p><p>Yıl sonu itibarıyla ülke nüfusunun yüzde 85'inin gaza erişimi olduğunu ve yılın son çeyreği itibarıyla gazda abone sayısın 22,5 milyona ulaştığını bildiren Arslan, \"Uzun yıllar abone alım ortalamasına bakıldığında yılın son çeyreğinde sisteme dahil olan yeni abone sayısı ortalama 450 bin civarında gerçekleşiyor. Bu yeni abone ile yılın 1 milyon yeni aboneyle tamamlanacağını öngörüyoruz.\" dedi.</p><p>Arslan, abonelerin tüm işlemlerini dijital kanallar vasıtasıyla yapabilir duruma geldiğini ve 2025 itibarıyla dijital işlemlerin toplam işlemler içerisindeki payının yüzde 25'e ulaştığını sözlerine ekledi.​​​​​​​</p>",
-    "link": "https://www.ekonomist.com.tr/enerji/dogal-gaz-tuketiminde-2025-hedefi-belirlendi-69310",
-    "category": "Economy",
-    "imageUrl": "https://cdn.ekonomist.com.tr/ekonomist/ekonomist-image-111--ab7b8ca429fe4f.jpg",
-    "date": "26.12.2025",
-    "time": "15:21",
-    "rawDate": "2025-12-26T12:21:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.webtekno.com/xiaomi-17-ultra-mekanik-optik-zoom-boyle-calisiyor-video-h209788.html",
-    "title": "\n                         Xiaomi 17 Ultra’da mekanik optik zoom böyle çalışıyor [Video] \n                    ",
-    "summary": "Paylaşılan videoda Xiaomi 17 Ultra’nın sürekli optik zoom sistemi içeriden gösteriliyor. Lens elemanlarının fiziksel olarak hareket etmesi, mobil kame...",
-    "content": "\n                         Paylaşılan bir videoda, Xiaomi 17 Ultra’nın fiziksel optik zoom sisteminin iç yapısı net şekilde görülüyor. Sistem, periskop kameradaki lens gruplarının mekanik olarak ileri–geri hareket etmesine dayanıyor. Böylece farklı odak uzaklıkları arasında geçiş tamamen optik olarak sağlanıyor.\nAn inside look at the Xiaomi 17 Ultra’s continuous optical zoom system… crazy ?: 楼斌Robin pic.twitter.com/8V9Yu78QeF&mdash; Shishir (@ShishirShelke1) December 25, 2025 \n\nGünümüzde çoğu akıllı telefon, sabit odaklı lensler ve dijital yakınlaştırma kullanıyor. Xiaomi’nin bu yaklaşımı ise fotoğraf makinelerindeki klasik zoom mantığını telefona taşıyor. Sonuç olarak detay kaybı azalıyor ve görüntü kalitesi daha tutarlı kalıyor.\nBu teknoloji daha karmaşık ve maliyetli olsa da, mobil fotoğrafçılıkta yeni bir dönemin sinyalini veriyor. Eğer üretim yaygınlaşırsa, gelecekte “x3–x5” gibi sabit zoom kavramları yerini gerçek optik yakınlaştırmaya bırakabilir. \n                    ",
-    "link": "\n                    https://www.webtekno.com/xiaomi-17-ultra-mekanik-optik-zoom-boyle-calisiyor-video-h209788.html\n                    ",
-    "category": "Technology",
-    "imageUrl": "https://imgrosetta.webtekno.com/file/642065/642065-640xauto.jpg",
-    "date": "26.12.2025",
-    "time": "15:18",
-    "rawDate": "2025-12-26T12:18:07.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.ekonomist.com.tr/gundem/fahis-site-aidatlarina-fren-yasal-duzenleme-geliyor-69308",
-    "title": "Fahiş site aidatlarına fren: Yasal düzenleme geliyor",
-    "summary": "TBMM’ye ilerleyen günlerde sunulması beklenen kanun teklifiyle, site aidatlarına ilişkin uygulamalarda fahiş artışların önüne geçilmesine yönelik yasa...",
-    "content": "<p>Son dönemde site aidatlarına ilişkin şikayetlerin artması üzerine adım atılıyor. AA muhabirinin aldığı bilgiye göre, AK Parti milletvekilleri Grup Başkanı Abdullah Güler başkanlığında, \"kiramdan fazla aidat ödüyorum\" şikayetlerini de dikkate alarak fahiş site aidatlarıyla ilgili kanun teklifi hazırladı.</p><p><strong>Hizmetler için teklifler alınacak, kat maliklerinin onayın sunulacak</strong></p><p>Yeni yılda TBMM Başkanlığına sunulması planlanan kanun teklifi ile fahiş site aidatlarıyla ilgili düzenleme yapılacak. Teklife göre, sitelerde demirbaş yenileme, altyapı, bakım, onarım ve temizlik gibi hizmetler ilk olarak yönetimlerce projelendirilecek. Bu hizmetler için teklifler alınacak.</p><p>Teklifler, kat maliklerinin onayına sunulacak. Onaylanan hizmetler için belirlenecek oranlarda aidat toplanacak. Onay alınmadan aidat toplanamayacak.</p><p>Düzenlemeyle aidat giderlerinin şeffaf olarak gerçekleştirilmesi, yüksek aidatların önüne geçilmesi ve bu konudaki suistimallerin engellenmesi amaçlanıyor.</p><p>Ayrıca bu teklifte, farklı nedenlerle ödeme yapılamamış, başvurusu çeşitli gerekçelerle tamamlanamamış tarım arazileri ve bazı taşınmazlarla ilgili hak sahiplerine yeni bir imkan tanınarak süre verilecek.</p>",
-    "link": "https://www.ekonomist.com.tr/gundem/fahis-site-aidatlarina-fren-yasal-duzenleme-geliyor-69308",
-    "category": "Economy",
-    "imageUrl": "https://cdn.ekonomist.com.tr/ekonomist/ekonomist-image-113--0277fbb3e06c42.jpg",
-    "date": "26.12.2025",
-    "time": "15:18",
-    "rawDate": "2025-12-26T12:18:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://haber.mynet.com/galeri/asrin-felaketi-nin-izleri-siniliyor-sehirler-yeniden-ayaga-kalkiyor-iste-deprem-bolgesinin-oncesi-ve-sonrasi-110107261992",
-    "title": "Büyük değişim! İşte deprem bölgesinin öncesi ve sonrası",
-    "summary": "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı, yıl sonuna kadar tamamlanacağı sözü verilen 455 bininci konutu yarın teslim etmeye hazırlanırken;  d...",
-    "content": "Çevre, Şehircilik ve İklim Değişikliği Bakanlığı, yıl sonuna kadar tamamlanacağı sözü verilen 455 bininci konutu yarın teslim etmeye hazırlanırken;  deprem bölgesinin öncesi ve sonrası paylaşılan fotoğraflarla yaşanan değişim gözler önüne serildi. Herkesin elini taşın altına koyduğunu belirten Çevre, Şehircilik ve İklim Değişikliği Bakanı Murat Kurum, \"Tarihi bir görevi yerine getirdik\" diye konuştu.",
-    "link": "https://haber.mynet.com/galeri/asrin-felaketi-nin-izleri-siniliyor-sehirler-yeniden-ayaga-kalkiyor-iste-deprem-bolgesinin-oncesi-ve-sonrasi-110107261992",
-    "category": "General",
-    "imageUrl": "https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=800&auto=format&fit=crop",
-    "date": "26.12.2025",
-    "time": "15:17",
-    "rawDate": "2025-12-26T12:17:30.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.donanimhaber.com/radiant-1-mw-lik-mikroreaktor-ile-dizel-jeneratorleri-hedefliyor--200148",
-    "title": "Dizel jeneratörlere alternatif: Radiant 1 MW’lık mikroreaktör ile geliyor",
-    "summary": "Radiant Industries, taşınabilir 1 MW kapasiteli mikroreaktörünü geliştirmek için 300 milyon dolarlık yatırım aldı. Reaktör, veri merkezleri ve uzak lo...",
-    "content": "<img src=\"https://www.donanimhaber.com/images/images/haber/200148/1400x788radiant-1-mw-lik-mikroreaktor-ile-dizel-jeneratorleri-hedefliyor.jpg\" />Radiant Industries, taşınabilir 1 MW kapasiteli mikroreaktörünü geliştirmek için 300 milyon dolarlık yatırım aldı. Reaktör, veri merkezleri ve uzak lokasyonlarda dizel jeneratörlerin yerini alacak.",
-    "link": "https://www.donanimhaber.com/radiant-1-mw-lik-mikroreaktor-ile-dizel-jeneratorleri-hedefliyor--200148",
-    "category": "Technology",
-    "imageUrl": "https://www.donanimhaber.com/images/images/haber/200148/1400x788radiant-1-mw-lik-mikroreaktor-ile-dizel-jeneratorleri-hedefliyor.jpg",
-    "date": "26.12.2025",
-    "time": "15:15",
-    "rawDate": "2025-12-26T12:15:00.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.donanimhaber.com/lg-ultragear-evo-5k-gaming-monitor-serisi-tanitildi--200165",
-    "title": "LG, UltraGear evo 5K oyuncu monitörlerini tanıttı",
-    "summary": "LG, yeni oyuncu monitörlerini tanıttı. LG UltraGear evo 5K gaming monitör, yüksek çözünürlüklü ekranlar, gelişmiş panel teknolojileriyle geliyor ve üç...",
-    "content": "<img src=\"https://www.donanimhaber.com/images/images/haber/200165/1400x788lg-ultragear-evo-5k-gaming-monitor-serisi-tanitildi.jpg\" />LG, yeni oyuncu monitörlerini tanıttı. LG UltraGear evo 5K gaming monitör, yüksek çözünürlüklü ekranlar, gelişmiş panel teknolojileriyle geliyor ve üç model içeriyor: 39GX950B, 27GM950B ve 52G930B.",
-    "link": "https://www.donanimhaber.com/lg-ultragear-evo-5k-gaming-monitor-serisi-tanitildi--200165",
-    "category": "Technology",
-    "imageUrl": "https://www.donanimhaber.com/images/images/haber/200165/1400x788lg-ultragear-evo-5k-gaming-monitor-serisi-tanitildi.jpg",
-    "date": "26.12.2025",
-    "time": "15:10",
-    "rawDate": "2025-12-26T12:10:45.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.webtekno.com/poco-f8-pro-ultra-turkiye-fiyatlari-ozellikleri-h209785.html",
-    "title": "\n                         Ucuza Amiral Gemisi Özellikler Sunan POCO F8 Serisi Türkiye'de: İşte Fiyatları \n                    ",
-    "summary": "POCO'nun yakın zamanda tanıttığı amiral gemisi telefonları F8 Pro ve F8 Ultra Türkiye'de satışa sunuldu. Cihazlar, uygun fiyata premium özellikler sun...",
-    "content": "\n                         En önde gelen akıllı telefon üreticilerinden Xiaomi’ye bağlı olarak faaliyet gösteren ve uygun fiyatlı modelleriyle öne çıkan POCO, kasım ayının sonlarında yeni amiral gemisi telefonu F8 serisini resmen tanıtmıştı. Şimdi ise bu telefon hakkında beklenen gelişme yaşandı. POCO F8 Pro ve F8 Ultra modelleri resmen ülkemize geldi.\nPOCO F8 serisi, Pro modelde Snapdragon 8 Elite, Ultra modelde ise Snapdragon 8 Elite Gen 5 işlemcileriyle öne çıkıyor. İki telefonda da gelişmiş ekranlar, üst seviye kameralar ve devasa bataryalar var. Bu üst düzey özellikleri uygun fiyata sunmaları da onları oldukça iddialı yapıyor. \nPOCO F8 Pro teknik özellikleri\n\n\n\n\n\n\n\n\n\n\nEkran\n6,59 inç, 1156x2510 piksel, 3500 nit, 120 Hz, AMOLED\n\n\nİşlemci\nSnapdragon 8 Elite\n\n\nRAM\n12 GB\n\n\nDepolama\n256/512 GB\n\n\nArka kamera\n50 MP + 8 MP + 50 MP\n\n\nÖn kamera\n20 MP\n\n\nBatarya\n6210 mAh (100W)\n\n\nİşletim sistemi\nHyperOS 3 (Android 16)\n\n\nRenk\nSiyah, Titanyum Gümüş, Mavi\n\n\n\nPOCO F8 Pro fiyatı\n\n\n\nVersiyon\nFiyatı\n\n\n\n\n12 GB + 256 GB\n42.999 TL\n\n\n12 GB + 512 GB\n46.999 TL\n\n\n\nPOCO F8 Ultra teknik özellikleri\n\n\n\n\n\n\n\n\n\n\nEkran\n6,9 inç, 1200x2608 piksel, 120 Hz, 3500 nit, AMOLED\n\n\nİşlemci\nSnapdragon 8 Elite Gen 5\n\n\nRAM\n12/16\n\n\nDepolama\n256/512 GB\n\n\nArka kamera\n50 MP + 50 MP + 50 MP\n\n\nÖn kamera\n32 MP\n\n\nBatarya\n6500 mAh (100W)\n\n\nİşletim sistemi\nHyperOS 3 (Android 16)\n\n\nRenk\nDenim Mavisi, Siyah\n\n\n\nPOCO F8 Ultra fiyatı\n\n\n\nVersiyon\nFiyatı\n\n\n\n\n12 GB + 256 GB\n59.999 TL\n\n\n16 GB + 512 GB\n63.999 TL\n\n\n\n \n                    ",
-    "link": "\n                    https://www.webtekno.com/poco-f8-pro-ultra-turkiye-fiyatlari-ozellikleri-h209785.html\n                    ",
-    "category": "Technology",
-    "imageUrl": "https://imgrosetta.webtekno.com/file/642052/642052-640xauto.jpg",
-    "date": "26.12.2025",
-    "time": "15:05",
-    "rawDate": "2025-12-26T12:05:30.000Z",
-    "isHeadline": false,
-    "isBreaking": false
-  },
-  {
-    "id": "https://www.webtekno.com/amazon-yanlislikla-200-bin-tl-degerinde-ssd-gonderdi-h209787.html",
-    "title": "\n                         Amazon Bir Müşteriye Yanlışlıkla 200 Bin TL Değerinde SSD Gönderdi (Üstelik Geri İstememiş) \n                    ",
-    "summary": "Amazon'dan yalnızca iki adet SSD alan bir Reddit kullanıcısı, Amazon'un kendisine 20 adet SSD gönderdiğini görünce şaşkına döndü. Kullanıcının Amazon'...",
-    "content": "\n                         Bir Reddit kullanıcısının başına eşi benzeri olmayan bir olay geldi. İddiaya göre kullanıcı, Amazon’dan yalnızca iki adet NVMe SSD sipariş etti ancak kargosunu açtığında karşısında 20 adet üst segment SSD buldu.\nReddit’te u/1trollzor1 kullanıcı adıyla paylaşılan gönderiye göre sipariş edilen ürünler Samsung 9100 PRO 2 TB, yani PCIe Gen 5.0 destekli, piyasadaki en hızlı ve en pahalı SSD’lerden biri. Tek bir SSD’nin fiyatı yaklaşık 250 dolar. Yanlış gönderilen toplam ürünlerin toplam değeri ise neredeyse 5 bin doları yani TL cinsinden 214 bin TL'yi buluyor.\nAmazon ürünlerin kullanıcıda kalabileceğini söylemiş\n\nAsıl şaşırtıcı olan ise olayın sonrası. Kullanıcı, durumu Amazon’a bildirdiğini ve şirketin hatayı kabul etmesine rağmen ürünleri geri istemediğini, yani SSD’leri kendisine bıraktığını söylüyor. Bu da hatalı bir gönderinin, kullanıcı için tabiri caizse teknoloji servetine dönüştüğü anlamına geliyor. Ne şans ama değil mi?\n20 adet üst düzey SSD ile ister devasa bir depolama sistemi kurmak ister tekrar satıştan ciddi bir gelir elde etmek mümkün. Reddit kullanıcıları ise olayı “yılbaşı mucizesi” ve “hayat boyu bir kez olacak şans” olarak yorumladı.\n\n\nPeki sizin başınıza böyle bir şey gelse ne yapardınız? Düşüncelerinizi aşağıdaki yorumlar kısmından bizimle paylaşabilirsiniz. \n                    ",
-    "link": "\n                    https://www.webtekno.com/amazon-yanlislikla-200-bin-tl-degerinde-ssd-gonderdi-h209787.html\n                    ",
-    "category": "Technology",
-    "imageUrl": "https://imgrosetta.webtekno.com/file/642060/642060-640xauto.jpg",
-    "date": "26.12.2025",
-    "time": "15:05",
-    "rawDate": "2025-12-26T12:05:04.000Z",
     "isHeadline": false,
     "isBreaking": false
   }

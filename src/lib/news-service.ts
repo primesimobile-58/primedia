@@ -82,5 +82,23 @@ export async function upsertNewsBatch(items: NewsItem[], maxItems: number = 500)
   const merged = Array.from(indexById.values());
   merged.sort((a, b) => parseDate(b.date, b.time).getTime() - parseDate(a.date, a.time).getTime());
   const limited = merged.slice(0, maxItems);
-  await fs.writeFile(NEWS_FILE, JSON.stringify(limited, null, 2));
+  // Reindex flags to surface premium content like CNN Global
+  const reindexed = reindexFlags(limited);
+  await fs.writeFile(NEWS_FILE, JSON.stringify(reindexed, null, 2));
+}
+
+export function reindexFlags(list: NewsItem[]): NewsItem[] {
+  // Weighted sort: recency first, then viewCount
+  const scored = list.map((n) => {
+    const recencyScore = parseDate(n.date, n.time).getTime();
+    const views = n.viewCount || 0;
+    const score = recencyScore + views * 1000; // weight views modestly
+    return { n, score };
+  }).sort((a, b) => b.score - a.score).map(({ n }) => n);
+
+  return scored.map((n, i) => ({
+    ...n,
+    isHeadline: i < 7, // show more headlines like global portals
+    isBreaking: i < 3,
+  }));
 }
