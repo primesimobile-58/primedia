@@ -59,3 +59,28 @@ export async function addNews(item: NewsItem): Promise<boolean> {
     throw error;
   }
 }
+
+function parseDate(dateStr: string, timeStr: string): Date {
+  try {
+    const [day, month, year] = dateStr.split('.').map((v) => parseInt(v));
+    const [hour, minute] = timeStr.split(':').map((v) => parseInt(v));
+    return new Date(year, month - 1, day, hour, minute);
+  } catch {
+    return new Date();
+  }
+}
+
+export async function upsertNewsBatch(items: NewsItem[], maxItems: number = 500): Promise<void> {
+  const existing = await getNews();
+  const indexById = new Map<string, NewsItem>();
+  existing.forEach((n) => indexById.set(n.id, n));
+  items.forEach((n) => {
+    if (!indexById.has(n.id)) {
+      indexById.set(n.id, n);
+    }
+  });
+  const merged = Array.from(indexById.values());
+  merged.sort((a, b) => parseDate(b.date, b.time).getTime() - parseDate(a.date, a.time).getTime());
+  const limited = merged.slice(0, maxItems);
+  await fs.writeFile(NEWS_FILE, JSON.stringify(limited, null, 2));
+}
