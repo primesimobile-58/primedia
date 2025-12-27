@@ -1,17 +1,54 @@
-import Parser from 'rss-parser';
+// Lightweight RSS parsing without `url.parse()` to avoid DEP0169 warnings
 import { NewsItem, mockNews, CUSTOM_NEWS_ITEM } from './data';
 import { getNews as getLocalNews } from './news-service';
 
-const parser = new Parser({
-  customFields: {
-    item: [
-      ['media:content', 'mediaContent'],
-      ['enclosure', 'enclosure'],
-      ['content:encoded', 'contentEncoded'],
-      ['dc:creator', 'creator'],
-    ],
-  },
-});
+function stripCDATA(value: string = ''): string {
+  return value.replace(/<!\[CDATA\[/g, '').replace(/\]\]>/g, '').trim();
+}
+
+type RawRSSItem = {
+  title?: string;
+  link?: string;
+  description?: string;
+  contentEncoded?: string;
+  pubDate?: string;
+  enclosure?: { url?: string };
+  mediaContent?: { $?: { url?: string } };
+};
+
+async function fetchRss(url: string): Promise<{ items: RawRSSItem[] }> {
+  const res = await fetch(url);
+  const xml = await res.text();
+  const items: RawRSSItem[] = [];
+
+  const itemRegex = /<item[\s\S]*?<\/item>/gi;
+  const tag = (src: string, name: string) => {
+    const m = src.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)<\/${name}>`, 'i'));
+    return m ? stripCDATA(m[1]) : undefined;
+  };
+
+  const enclosureRegex = /<enclosure[^>]*url="([^"]+)"[^>]*\/?>(?:<\/enclosure>)?/i;
+  const mediaRegex = /<media:content[^>]*url="([^"]+)"[^>]*\/?>(?:<\/media:content>)?/i;
+
+  let m: RegExpExecArray | null;
+  while ((m = itemRegex.exec(xml)) !== null) {
+    const block = m[0];
+    const item: RawRSSItem = {
+      title: tag(block, 'title'),
+      link: tag(block, 'link'),
+      description: tag(block, 'description'),
+      contentEncoded: tag(block, 'content:encoded'),
+      pubDate: tag(block, 'pubDate'),
+    };
+    const enc = block.match(enclosureRegex);
+    if (enc) item.enclosure = { url: enc[1] };
+    const med = block.match(mediaRegex);
+    if (med) item.mediaContent = { $: { url: med[1] } } as any;
+    items.push(item);
+  }
+
+  return { items };
+}
 
 type RSSSource = {
   [key: string]: { // lang
@@ -288,12 +325,9 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
   
   try {
     const feedPromises = urls.map(url => 
-      parser.parseURL(url)
+      fetchRss(url)
         .then(feed => ({ status: 'fulfilled', value: feed }))
-        .catch(err => {
-          console.error(`Error fetching RSS for ${url}:`, err);
-          return { status: 'rejected', reason: err };
-        })
+        .catch(err => ({ status: 'rejected', reason: err }))
     );
 
     const results = await Promise.all(feedPromises);
@@ -389,7 +423,7 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
         
         // Clean up description (remove HTML tags if necessary, but some components render HTML)
         // For this project, we'll strip HTML for the summary to be safe
-        const summary = ((item as any).description || item.contentSnippet || '').replace(/<[^>]+>/g, '').slice(0, 150) + '...';
+        const summary = ((item as any).description || '').replace(/<[^>]+>/g, '').slice(0, 150) + '...';
         const pubDate = item.pubDate ? new Date(item.pubDate) : new Date();
 
         // Check for spam/boring content
