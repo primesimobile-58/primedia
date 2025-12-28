@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+import ConsoleFilter from "@/components/console-filter";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,9 +27,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
+        <Script id="console-filter-pre" strategy="beforeInteractive">
+          {`
+            (function(){
+              var origErr = console.error, origWarn = console.warn;
+              console.error = function(){
+                var msg = String(arguments[0]||'');
+                if (msg.indexOf('net::ERR_ABORTED')!==-1 || msg.indexOf('navigateDynamicallyWithNoPrefetch')!==-1) return;
+                origErr.apply(console, arguments);
+              };
+              console.warn = function(){
+                var msg = String(arguments[0]||'');
+                if (msg.indexOf('width(-1) and height(-1)')!==-1 || msg.indexOf('prefetch')!==-1) return;
+                origWarn.apply(console, arguments);
+              };
+            })();
+          `}
+        </Script>
+        <ConsoleFilter />
         {children}
       </body>
     </html>
