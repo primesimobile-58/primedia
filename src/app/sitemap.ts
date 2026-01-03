@@ -1,11 +1,12 @@
 import { MetadataRoute } from 'next';
 import { getNews } from '@/lib/news-service';
+import type { NewsItem } from '@/lib/data';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://primedia.com'; // In production this should be env var
   
   // Get dynamic news
-  const news = await getNews();
+  const news: NewsItem[] = await getNews();
   
   // Static routes
   const staticRoutes = [
@@ -32,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // Dynamic News Routes
-  const newsRoutes = news.map(item => {
+  const newsRoutes = news.map((item: NewsItem) => {
     let date = new Date();
     try {
       if (item.date) {

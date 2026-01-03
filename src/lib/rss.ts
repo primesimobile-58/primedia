@@ -2,11 +2,14 @@
 import { NewsItem, mockNews, CUSTOM_NEWS_ITEM } from './data';
 import { getNews as getLocalNews } from './news-service';
 
+// Parser removed; using native fetch-based XML parsing
+
 function stripCDATA(value: string = ''): string {
   return value.replace(/<!\[CDATA\[/g, '').replace(/\]\]>/g, '').trim();
 }
 
 type RawRSSItem = {
+  guid?: string;
   title?: string;
   link?: string;
   description?: string;
@@ -17,7 +20,10 @@ type RawRSSItem = {
 };
 
 async function fetchRss(url: string): Promise<{ items: RawRSSItem[] }> {
-  const res = await fetch(url);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  const res = await fetch(url, { signal: controller.signal });
+  clearTimeout(timeout);
   const xml = await res.text();
   const items: RawRSSItem[] = [];
 
@@ -27,8 +33,8 @@ async function fetchRss(url: string): Promise<{ items: RawRSSItem[] }> {
     return m ? stripCDATA(m[1]) : undefined;
   };
 
-  const enclosureRegex = /<enclosure[^>]*url="([^"]+)"[^>]*\/?>(?:<\/enclosure>)?/i;
-  const mediaRegex = /<media:content[^>]*url="([^"]+)"[^>]*\/?>(?:<\/media:content>)?/i;
+  const enclosureRegex = /<enclosure[^>]*url=\"([^\"]+)\"[^>]*\/?>(?:<\/enclosure>)?/i;
+  const mediaRegex = /<media:content[^>]*url=\"([^\"]+)\"[^>]*\/?>(?:<\/media:content>)?/i;
 
   let m: RegExpExecArray | null;
   while ((m = itemRegex.exec(xml)) !== null) {
@@ -105,11 +111,13 @@ const RSS_SOURCES: RSSSource = {
     general: [
       'http://feeds.bbci.co.uk/news/rss.xml',
       'http://rss.cnn.com/rss/edition.rss',
-      'https://www.aljazeera.com/xml/rss/all.xml'
+      'https://www.aljazeera.com/xml/rss/all.xml',
+      'https://feeds.reuters.com/reuters/topNews'
     ],
     world: [
       'http://feeds.bbci.co.uk/news/world/rss.xml',
-      'http://rss.cnn.com/rss/edition_world.rss'
+      'http://rss.cnn.com/rss/edition_world.rss',
+      'https://feeds.reuters.com/reuters/worldNews'
     ],
     technology: [
       'http://feeds.bbci.co.uk/news/technology/rss.xml',
@@ -249,6 +257,55 @@ function extractImage(item: any): string {
   return '';
 }
 
+function normalizeLink(link?: string): string | undefined {
+  if (!link) return undefined;
+  try {
+    const u = new URL(link);
+    return `${u.origin}${u.pathname}`; // strip query params to avoid duplicate IDs
+  } catch {
+    return link;
+  }
+}
+
+function buildItemId(item: RawRSSItem): string {
+  const norm = normalizeLink(item.link);
+  if (item.guid) return item.guid;
+  if (norm) return norm;
+  const basis = `${item.title || ''}-${item.pubDate || ''}`;
+  return `nid-${hashString(basis)}`;
+}
+
+async function parseOgImage(url: string): Promise<string> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 4000);
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeout);
+    const html = await res.text();
+    const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i);
+    if (og && og[1]) return og[1];
+    const tw = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i);
+    if (tw && tw[1]) return tw[1];
+    const ogs = html.match(/<meta[^>]+property=["']og:image:secure_url["'][^>]+content=["']([^"']+)["']/i);
+    if (ogs && ogs[1]) return ogs[1];
+    return '';
+  } catch {
+    return '';
+  }
+}
+
+async function enrichImagesForTop(items: (NewsItem & { rawDate: Date })[], limit = 24): Promise<void> {
+  let count = 0;
+  for (const it of items) {
+    if (count >= limit) break;
+    if ((!it.imageUrl || it.imageUrl.length < 5) && it.link) {
+      const og = await parseOgImage(it.link);
+      if (og) it.imageUrl = og;
+      count++;
+    }
+  }
+}
+
 export async function getAllNews(lang: string): Promise<NewsItem[]> {
   const categories = Object.keys(RSS_SOURCES[lang] || RSS_SOURCES['tr']);
   const promises = categories.map(cat => fetchNews(lang, cat));
@@ -324,19 +381,20 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
   const urls = Array.isArray(sourceUrls) ? sourceUrls : [sourceUrls];
   
   try {
-    const feedPromises = urls.map(url => 
+    type FetchResult = { status: 'fulfilled'; value: { items: RawRSSItem[] } } | { status: 'rejected'; reason: Error };
+    const feedPromises: Promise<FetchResult>[] = urls.map((url: string) =>
       fetchRss(url)
-        .then(feed => ({ status: 'fulfilled', value: feed }))
-        .catch(err => ({ status: 'rejected', reason: err }))
+        .then((feed) => ({ status: 'fulfilled' as const, value: feed }))
+        .catch((err: unknown) => ({ status: 'rejected' as const, reason: err as Error }))
     );
 
-    const results = await Promise.all(feedPromises);
+    const results: FetchResult[] = await Promise.all(feedPromises);
     const successfulFeeds = results
-      .filter((r): r is { status: 'fulfilled', value: any } => r.status === 'fulfilled')
-      .map(r => r.value);
+      .filter((r): r is { status: 'fulfilled'; value: { items: RawRSSItem[] } } => r.status === 'fulfilled')
+      .map((r) => r.value);
 
-    let allItems: any[] = [];
-    successfulFeeds.forEach(feed => {
+    let allItems: RawRSSItem[] = [];
+    successfulFeeds.forEach((feed) => {
       if (feed && feed.items) {
         allItems.push(...feed.items);
       }
@@ -406,10 +464,10 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     }
     // ----------------------------
 
-    // Deduplicate items based on link or id
-    const uniqueItems = new Map();
-    allItems.forEach(item => {
-      const id = item.guid || item.link;
+    // Deduplicate items across categories by normalized ID
+    const uniqueItems = new Map<string | undefined, RawRSSItem>();
+    allItems.forEach((item) => {
+      const id = buildItemId(item);
       if (!uniqueItems.has(id)) {
         uniqueItems.set(id, item);
       }
@@ -417,9 +475,9 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
 
     const sortedItems = Array.from(uniqueItems.values())
       .map((item, index) => {
-        const id = item.guid || item.link || index.toString();
+        const id = buildItemId(item);
         const extractedImage = extractImage(item);
-        const imageUrl = extractedImage || getFallbackImage(sourceKey, id, item.title);
+        const imageUrl = extractedImage || '';
         
         // Clean up description (remove HTML tags if necessary, but some components render HTML)
         // For this project, we'll strip HTML for the summary to be safe
@@ -431,7 +489,7 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
           return null;
         }
 
-        return {
+        const mapped: (NewsItem & { rawDate: Date }) = {
           id: id, 
           title: item.title || 'Haber Başlığı',
           summary: summary,
@@ -445,6 +503,7 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
           isHeadline: false, // Will be set after sorting
           isBreaking: false, 
         };
+        return mapped;
       })
       .filter(item => item !== null) as (NewsItem & { rawDate: Date })[];
 
@@ -463,10 +522,17 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     }
     // ---------------------------------------------------
 
-    // Re-index headline/breaking status
-    return sortedItems.map((item, index) => ({
+    // Enrich missing images for top items, then apply fallbacks
+    await enrichImagesForTop(sortedItems, 24);
+    const withImages = sortedItems.map((item) => ({
       ...item,
-      isHeadline: index < 5,
+      imageUrl: item.imageUrl && item.imageUrl.length > 5 ? item.imageUrl : getFallbackImage(sourceKey, item.id, item.title)
+    }));
+
+    // Re-index headline/breaking status
+    return withImages.map((item, index) => ({
+      ...item,
+      isHeadline: index < 7,
       isBreaking: index < 3
     }));
 
