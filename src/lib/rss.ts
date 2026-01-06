@@ -22,7 +22,12 @@ type RawRSSItem = {
 async function fetchRss(url: string): Promise<{ items: RawRSSItem[] }> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 8000);
-  const res = await fetch(url, { signal: controller.signal });
+  const res = await fetch(url, {
+    signal: controller.signal,
+    redirect: 'follow',
+    cache: 'no-store',
+    headers: { 'user-agent': 'Mozilla/5.0 (PrimediaBot/1.0; +https://www.primedia.com.tr)' }
+  });
   clearTimeout(timeout);
   const xml = await res.text();
   const items: RawRSSItem[] = [];
@@ -109,34 +114,34 @@ const RSS_SOURCES: RSSSource = {
   },
   en: {
     general: [
-      'http://feeds.bbci.co.uk/news/rss.xml',
-      'http://rss.cnn.com/rss/edition.rss',
+      'https://feeds.bbci.co.uk/news/rss.xml',
+      'https://rss.cnn.com/rss/edition.rss',
       'https://www.aljazeera.com/xml/rss/all.xml',
       'https://feeds.reuters.com/reuters/topNews'
     ],
     world: [
-      'http://feeds.bbci.co.uk/news/world/rss.xml',
-      'http://rss.cnn.com/rss/edition_world.rss',
+      'https://feeds.bbci.co.uk/news/world/rss.xml',
+      'https://rss.cnn.com/rss/edition_world.rss',
       'https://feeds.reuters.com/reuters/worldNews'
     ],
     technology: [
-      'http://feeds.bbci.co.uk/news/technology/rss.xml',
+      'https://feeds.bbci.co.uk/news/technology/rss.xml',
       'https://techcrunch.com/feed/',
       'https://www.theverge.com/rss/index.xml'
     ],
     sports: [
-      'http://feeds.bbci.co.uk/sport/rss.xml',
+      'https://feeds.bbci.co.uk/sport/rss.xml',
       'https://www.espn.com/espn/rss/news'
     ],
     economy: [
-      'http://feeds.bbci.co.uk/news/business/rss.xml',
+      'https://feeds.bbci.co.uk/news/business/rss.xml',
       'https://www.cnbc.com/id/10000664/device/rss/rss.html'
     ],
     health: [
-      'http://feeds.bbci.co.uk/news/health/rss.xml'
+      'https://feeds.bbci.co.uk/news/health/rss.xml'
     ],
     culture: [
-      'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml'
+      'https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml'
     ],
   },
   ar: {
