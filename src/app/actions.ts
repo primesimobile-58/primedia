@@ -2,7 +2,8 @@
 
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
-import { incrementViewCount, addNews } from '@/lib/news-service'
+import { incrementViewCount, addNews, upsertNewsBatch } from '@/lib/news-service'
+import { getAllNews } from '@/lib/rss'
 import { trackVisit } from '@/lib/analytics-service'
 
 
@@ -88,5 +89,38 @@ export async function publishNews(prevState: any, formData: FormData) {
   } catch (error) {
     console.error('News publishing error:', error);
     return { success: false, message: 'Haber yayınlanırken bir hata oluştu.' }
+  }
+}
+
+// Live Ingest Actions (Admin)
+export async function ingestNow(prevState: any, formData: FormData) {
+  try {
+    const lang = (formData.get('lang') as string) || 'tr'
+    const items = await getAllNews(lang)
+    await upsertNewsBatch(items)
+    revalidatePath(`/${lang}`, 'page')
+    revalidatePath(`/${lang}/admin`, 'page')
+    return { success: true, message: `${lang.toUpperCase()} ingest tamamlandı: ${items.length} içerik` }
+  } catch (e) {
+    console.error('Ingest error:', e)
+    return { success: false, message: 'Ingest sırasında hata oluştu' }
+  }
+}
+
+export async function ingestAll(prevState: any) {
+  try {
+    const langs = ['tr','en','ar']
+    let total = 0
+    for (const lang of langs) {
+      const items = await getAllNews(lang)
+      await upsertNewsBatch(items)
+      total += items.length
+      revalidatePath(`/${lang}`, 'page')
+      revalidatePath(`/${lang}/admin`, 'page')
+    }
+    return { success: true, message: `Global ingest tamamlandı: ${total} içerik` }
+  } catch (e) {
+    console.error('Global ingest error:', e)
+    return { success: false, message: 'Global ingest sırasında hata oluştu' }
   }
 }

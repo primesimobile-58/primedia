@@ -224,7 +224,7 @@ const getFallbackImage = (category: string, id: string, title?: string) => {
     }
     
     // World/Politics Keywords
-    if (['abd', 'rusya', 'ukrayna', 'israil', 'gazze', 'trump', 'biden', 'putin', 'savaş', 'kriz', 'bm', 'nato', 'world', 'war'].some(k => lowerTitle.includes(k))) {
+    if (['abd', 'rusya', 'ukrayna', 'israil', 'gazze', 'filistin', 'gaza', 'palestine', 'rafah', 'refah', 'şifa', 'al shifa', 'trump', 'biden', 'putin', 'savaş', 'kriz', 'bm', 'nato', 'world', 'war'].some(k => lowerTitle.includes(k))) {
       const images = FALLBACK_IMAGES.world;
       return images[Math.abs(hashString(id)) % images.length];
     }
@@ -507,8 +507,15 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
       })
       .filter(item => item !== null) as (NewsItem & { rawDate: Date })[];
 
-    // Sort by date descending
+    // Sort by date descending first
     sortedItems.sort((a, b) => b.rawDate.getTime() - a.rawDate.getTime());
+
+    // Apply priority boost for Gaza/Filistin related content
+    const boosted = [...sortedItems].sort((a, b) => {
+      const sa = a.rawDate.getTime() + priorityBoostMillis(a.title, a.summary);
+      const sb = b.rawDate.getTime() + priorityBoostMillis(b.title, b.summary);
+      return sb - sa;
+    });
 
     // --- CUSTOM BREAKING NEWS INJECTION (SIMULATION) ---
     if (lang === 'tr' && category === 'general') {
@@ -523,18 +530,22 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     // ---------------------------------------------------
 
     // Enrich missing images for top items, then apply fallbacks
-    await enrichImagesForTop(sortedItems, 24);
-    const withImages = sortedItems.map((item) => ({
+    await enrichImagesForTop(boosted, 36);
+    const withImages = boosted.map((item) => ({
       ...item,
       imageUrl: item.imageUrl && item.imageUrl.length > 5 ? item.imageUrl : getFallbackImage(sourceKey, item.id, item.title)
     }));
 
     // Re-index headline/breaking status
-    return withImages.map((item, index) => ({
-      ...item,
-      isHeadline: index < 7,
-      isBreaking: index < 3
-    }));
+    return withImages.map((item, index) => {
+      const text = (item.title + ' ' + item.summary).toLowerCase();
+      const isGaza = PRIORITY_KEYWORDS.some(k => text.includes(k));
+      return {
+        ...item,
+        isHeadline: index < 7 || isGaza,
+        isBreaking: index < 3 || isGaza,
+      };
+    });
 
   } catch (error) {
     console.error(`Error fetching RSS for ${lang}/${category}:`, error);
@@ -564,4 +575,17 @@ export async function fetchNews(lang: string, category: string = 'general'): Pro
     }
     return [];
   }
+}
+// Priority boost for Gaza/Filistin related content
+const PRIORITY_KEYWORDS = [
+  'gazze', 'gaza', 'filistin', 'palestine', 'israil', 'israel', 'soykırım', 'zulüm', 'savaş', 'katliam', 'abluka', 'rafah', 'refah', 'şifa', 'al shifa', 'gazze şeridi'
+];
+
+function priorityBoostMillis(title: string = '', summary: string = ''): number {
+  const text = (title + ' ' + summary).toLowerCase();
+  const hits = PRIORITY_KEYWORDS.reduce((acc, k) => acc + (text.includes(k) ? 1 : 0), 0);
+  if (hits === 0) return 0;
+  // Each hit adds 12 hours; cap at 3 days
+  const boostPerHit = 12 * 60 * 60 * 1000;
+  return Math.min(hits * boostPerHit, 3 * 24 * 60 * 60 * 1000);
 }

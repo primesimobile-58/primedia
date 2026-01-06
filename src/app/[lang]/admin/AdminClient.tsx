@@ -9,7 +9,7 @@ import {
   LogOut, UploadCloud, AlertCircle, LayoutDashboard, Globe, Users, TrendingUp,
   Zap, BarChart3, PieChart, ArrowUpRight, ShieldCheck, PenTool
 } from 'lucide-react';
-import { authenticate, logout, publishNews } from '../../actions';
+import { authenticate, logout, publishNews, ingestNow, ingestAll } from '../../actions';
 
 interface AdminClientProps {
   initialAuth: boolean;
@@ -63,6 +63,8 @@ export default function AdminClient({ initialAuth, news, analytics }: AdminClien
   // Server Action States
   const [loginState, loginAction] = useFormState(authenticate, initialState);
   const [publishState, publishAction] = useFormState(publishNews, initialState);
+  const [ingestTRState, ingestTRAction] = useFormState(ingestNow, initialState);
+  const [ingestAllState, ingestAllAction] = useFormState(ingestAll, initialState);
 
   // Calculate stats
   const totalViews = news.reduce((acc, item) => acc + (item.viewCount || 0), 0);
@@ -221,6 +223,14 @@ export default function AdminClient({ initialAuth, news, analytics }: AdminClien
               <PenTool size={16} />
               Generator
             </button>
+            <button 
+              onClick={() => setActiveTab('status')}
+              className={`hidden md:flex items-center gap-2 px-6 py-2.5 rounded-lg font-bold text-sm transition-all duration-300 text-gray-400 hover:text-white hover:bg-white/5`}
+              title="Use Live Ops in Status"
+            >
+              <Zap size={16} />
+              Live Ops
+            </button>
           </div>
 
           <button 
@@ -339,6 +349,39 @@ export default function AdminClient({ initialAuth, news, analytics }: AdminClien
                       </div>
                     ))}
                  </div>
+              </div>
+
+              {/* Live Ops */}
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                    <Zap size={20} className="text-yellow-400" />
+                    Live Operations
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <form action={ingestTRAction} className="space-y-3">
+                    <input type="hidden" name="lang" value="tr" />
+                    <SubmitButton text="TR Ingest Now" icon={Rss} loadingText="İşleniyor..." />
+                    {ingestTRState.message && (
+                      <div className={`p-3 rounded-xl text-xs font-bold flex items-center gap-2 ${ingestTRState.success ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-red-500/20 text-red-300 border border-red-500/30'}`}>
+                        {ingestTRState.success ? <Check size={14} /> : <AlertCircle size={14} />}
+                        {ingestTRState.message}
+                      </div>
+                    )}
+                  </form>
+
+                  <form action={ingestAllAction} className="space-y-3">
+                    <SubmitButton text="Global Ingest Now" icon={Globe} loadingText="İşleniyor..." />
+                    {ingestAllState.message && (
+                      <div className={`p-3 rounded-xl text-xs font-bold flex items-center gap-2 ${ingestAllState.success ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-red-500/20 text-red-300 border border-red-500/30'}`}>
+                        {ingestAllState.success ? <Check size={14} /> : <AlertCircle size={14} />}
+                        {ingestAllState.message}
+                      </div>
+                    )}
+                  </form>
+                </div>
               </div>
             </div>
 
